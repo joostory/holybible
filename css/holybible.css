@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/**
+ * Basic styling
+ */
+body {
+    font: 100 14px/1.6em sans;
+    color: #333;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+}
+
+.main {
+  overflow:hidden;
+  width:100%;
+  height:100%;
+}
+header {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:30px;
+  padding:10px 10px 10px 45px;
+  background: #eee url("/images/ico_holybible.png") no-repeat 10px 10px;
+  background-size: 30px 30px
+}
+header .title { line-height:30px; font-size:24px }
+
+section {
+  position:absolute;
+  top:50px;
+  bottom:0;
+  left:0;
+  width:300px;
+  overflow:auto
+}
+section ul {
+  width:100%
+}
+section ul li {
+  list-style: none
+}
+section ul li a { cursor:pointer; display:block; padding:10px; }
+section ul li a:hover { background-color:#fafafa }
+
+article {
+  position:absolute;
+  top:50px;
+  bottom:0;
+  right:0;
+  left:300px;
+  overflow:auto
+}
+
+article ol {
+  padding-left:30px;
+  margin: 10px
+}
+article ol li {
+
+}
+article .btn_verse { display:none }
+article .today { text-align:center; padding:50px 0; color:#999 }
+
+.btn_close { position:fixed; top:10px; left:10px; width:30px; height:30px; content:"<" }
+
+
+@media (max-width: 600px) {
+  section {
+    width:auto;
+    right:0
+  }
+  article {
+    display:none
+  }
+  article .btn_verse { display:block }
+  .verse section { display:none }
+  .verse article {
+    display:block;
+    left:0
+  }
+}

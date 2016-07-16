@@ -1,0 +1,938 @@
+[
+    {
+        "bibles": [
+            {
+                "bcode": 1,
+                "chapterCount": 50,
+                "name": "\ucc3d\uc138\uae30",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 2,
+                "chapterCount": 40,
+                "name": "\ucd9c\uc560\uad7d\uae30",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 3,
+                "chapterCount": 27,
+                "name": "\ub808\uc704\uae30",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 4,
+                "chapterCount": 36,
+                "name": "\ubbfc\uc218\uae30",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 5,
+                "chapterCount": 34,
+                "name": "\uc2e0\uba85\uae30",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 6,
+                "chapterCount": 24,
+                "name": "\uc5ec\ud638\uc218\uc544",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 7,
+                "chapterCount": 21,
+                "name": "\uc0ac\uc0ac\uae30",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 8,
+                "chapterCount": 4,
+                "name": "\ub8fb\uae30",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 9,
+                "chapterCount": 31,
+                "name": "\uc0ac\ubb34\uc5d8\uc0c1",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 10,
+                "chapterCount": 24,
+                "name": "\uc0ac\ubb34\uc5d8\ud558",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 11,
+                "chapterCount": 22,
+                "name": "\uc5f4\uc655\uae30\uc0c1",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 12,
+                "chapterCount": 25,
+                "name": "\uc5f4\uc655\uae30\ud558",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 13,
+                "chapterCount": 29,
+                "name": "\uc5ed\ub300\uc0c1",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 14,
+                "chapterCount": 36,
+                "name": "\uc5ed\ub300\ud558",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 15,
+                "chapterCount": 10,
+                "name": "\uc5d0\uc2a4\ub77c",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 16,
+                "chapterCount": 13,
+                "name": "\ub290\ud5e4\ubbf8\uc57c",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 17,
+                "chapterCount": 10,
+                "name": "\uc5d0\uc2a4\ub354",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 18,
+                "chapterCount": 42,
+                "name": "\uc6a5\uae30",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 19,
+                "chapterCount": 150,
+                "name": "\uc2dc\ud3b8",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 20,
+                "chapterCount": 31,
+                "name": "\uc7a0\uc5b8",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 21,
+                "chapterCount": 12,
+                "name": "\uc804\ub3c4\uc11c",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 22,
+                "chapterCount": 8,
+                "name": "\uc544\uac00",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 23,
+                "chapterCount": 66,
+                "name": "\uc774\uc0ac\uc57c",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 24,
+                "chapterCount": 52,
+                "name": "\uc608\ub808\ubbf8\uc57c",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 25,
+                "chapterCount": 5,
+                "name": "\uc608\ub808\ubbf8\uc57c \uc560\uac00",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 26,
+                "chapterCount": 48,
+                "name": "\uc5d0\uc2a4\uac94",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 27,
+                "chapterCount": 12,
+                "name": "\ub2e4\ub2c8\uc5d8",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 28,
+                "chapterCount": 14,
+                "name": "\ud638\uc138\uc544",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 29,
+                "chapterCount": 3,
+                "name": "\uc694\uc5d8",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 30,
+                "chapterCount": 9,
+                "name": "\uc544\ubaa8\uc2a4",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 31,
+                "chapterCount": 1,
+                "name": "\uc624\ubc14\ub31c",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 32,
+                "chapterCount": 4,
+                "name": "\uc694\ub098",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 33,
+                "chapterCount": 7,
+                "name": "\ubbf8\uac00",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 34,
+                "chapterCount": 3,
+                "name": "\ub098\ud6d4",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 35,
+                "chapterCount": 3,
+                "name": "\ud558\ubc15\uad6d",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 36,
+                "chapterCount": 3,
+                "name": "\uc2a4\ubc14\ub0d0",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 37,
+                "chapterCount": 2,
+                "name": "\ud559\uac1c",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 38,
+                "chapterCount": 14,
+                "name": "\uc2a4\uac00\ub7b4",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 39,
+                "chapterCount": 4,
+                "name": "\ub9d0\ub77c\uae30",
+                "type": "old",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 40,
+                "chapterCount": 28,
+                "name": "\ub9c8\ud0dc\ubcf5\uc74c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 41,
+                "chapterCount": 16,
+                "name": "\ub9c8\uac00\ubcf5\uc74c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 42,
+                "chapterCount": 24,
+                "name": "\ub204\uac00\ubcf5\uc74c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 43,
+                "chapterCount": 21,
+                "name": "\uc694\ud55c\ubcf5\uc74c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 44,
+                "chapterCount": 28,
+                "name": "\uc0ac\ub3c4\ud589\uc804",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 45,
+                "chapterCount": 16,
+                "name": "\ub85c\ub9c8\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 46,
+                "chapterCount": 16,
+                "name": "\uace0\ub9b0\ub3c4\uc804\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 47,
+                "chapterCount": 13,
+                "name": "\uace0\ub9b0\ub3c4\ud6c4\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 48,
+                "chapterCount": 6,
+                "name": "\uac08\ub77c\ub514\uc544\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 49,
+                "chapterCount": 6,
+                "name": "\uc5d0\ubca0\uc18c\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 50,
+                "chapterCount": 4,
+                "name": "\ube4c\ub9bd\ubcf4\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 51,
+                "chapterCount": 4,
+                "name": "\uace8\ub85c\uc0c8\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 52,
+                "chapterCount": 5,
+                "name": "\ub370\uc0b4\ub85c\ub2c8\uac00\uc804\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 53,
+                "chapterCount": 3,
+                "name": "\ub370\uc0b4\ub85c\ub2c8\uac00\ud6c4\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 54,
+                "chapterCount": 6,
+                "name": "\ub514\ubaa8\ub370\uc804\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 55,
+                "chapterCount": 4,
+                "name": "\ub514\ubaa8\ub370\ud6c4\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 56,
+                "chapterCount": 3,
+                "name": "\ub514\ub3c4\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 57,
+                "chapterCount": 1,
+                "name": "\ube4c\ub808\ubaac\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 58,
+                "chapterCount": 13,
+                "name": "\ud788\ube0c\ub9ac\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 59,
+                "chapterCount": 5,
+                "name": "\uc57c\uace0\ubcf4\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 60,
+                "chapterCount": 5,
+                "name": "\ubca0\ub4dc\ub85c\uc804\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 61,
+                "chapterCount": 3,
+                "name": "\ubca0\ub4dc\ub85c\ud6c4\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 62,
+                "chapterCount": 5,
+                "name": "\uc694\ud55c1\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 63,
+                "chapterCount": 1,
+                "name": "\uc694\ud55c2\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 64,
+                "chapterCount": 1,
+                "name": "\uc694\ud55c3\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 65,
+                "chapterCount": 1,
+                "name": "\uc720\ub2e4\uc11c",
+                "type": "new",
+                "vcode": "GAE"
+            },
+            {
+                "bcode": 66,
+                "chapterCount": 22,
+                "name": "\uc694\ud55c\uacc4\uc2dc\ub85d",
+                "type": "new",
+                "vcode": "GAE"
+            }
+        ],
+        "name": "GAE",
+        "vcode": "GAE"
+    },
+    {
+        "bibles": [
+            {
+                "bcode": 1,
+                "chapterCount": 50,
+                "name": "Genesis",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 2,
+                "chapterCount": 40,
+                "name": "Exodus",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 3,
+                "chapterCount": 27,
+                "name": "Leviticus",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 4,
+                "chapterCount": 36,
+                "name": "Numbers",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 5,
+                "chapterCount": 34,
+                "name": "Deuteronomy",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 6,
+                "chapterCount": 24,
+                "name": "Joshua",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 7,
+                "chapterCount": 21,
+                "name": "Judges",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 8,
+                "chapterCount": 4,
+                "name": "Ruth",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 9,
+                "chapterCount": 31,
+                "name": "1 Samuel",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 10,
+                "chapterCount": 24,
+                "name": "2 Samuel",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 11,
+                "chapterCount": 22,
+                "name": "1 Kings",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 12,
+                "chapterCount": 25,
+                "name": "2 Kings",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 13,
+                "chapterCount": 29,
+                "name": "1 Chronicles",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 14,
+                "chapterCount": 36,
+                "name": "2 Chronicles",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 15,
+                "chapterCount": 10,
+                "name": "Ezra",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 16,
+                "chapterCount": 13,
+                "name": "Nehemiah",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 17,
+                "chapterCount": 10,
+                "name": "Esther",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 18,
+                "chapterCount": 42,
+                "name": "Job",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 19,
+                "chapterCount": 150,
+                "name": "Psalms",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 20,
+                "chapterCount": 31,
+                "name": "Proverbs",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 21,
+                "chapterCount": 12,
+                "name": "Ecclesiastes",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 22,
+                "chapterCount": 8,
+                "name": "Song of Songs",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 23,
+                "chapterCount": 66,
+                "name": "Isaiah",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 24,
+                "chapterCount": 52,
+                "name": "Jeremiah",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 25,
+                "chapterCount": 5,
+                "name": "Lamentations",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 26,
+                "chapterCount": 48,
+                "name": "Ezekiel",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 27,
+                "chapterCount": 12,
+                "name": "Daniel",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 28,
+                "chapterCount": 14,
+                "name": "Hosea",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 29,
+                "chapterCount": 3,
+                "name": "Joel",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 30,
+                "chapterCount": 9,
+                "name": "Amos",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 31,
+                "chapterCount": 1,
+                "name": "Obadiah",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 32,
+                "chapterCount": 4,
+                "name": "Jonah",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 33,
+                "chapterCount": 7,
+                "name": "Micah",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 34,
+                "chapterCount": 3,
+                "name": "Nahum",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 35,
+                "chapterCount": 3,
+                "name": "Habakkuk",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 36,
+                "chapterCount": 3,
+                "name": "Zephaniah",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 37,
+                "chapterCount": 2,
+                "name": "Haggai",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 38,
+                "chapterCount": 14,
+                "name": "Zechariah",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 39,
+                "chapterCount": 4,
+                "name": "Malachi",
+                "type": "old",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 40,
+                "chapterCount": 28,
+                "name": "Matthew",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 41,
+                "chapterCount": 16,
+                "name": "Mark",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 42,
+                "chapterCount": 24,
+                "name": "Luke",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 43,
+                "chapterCount": 21,
+                "name": "John",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 44,
+                "chapterCount": 28,
+                "name": "Acts",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 45,
+                "chapterCount": 16,
+                "name": "Romans",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 46,
+                "chapterCount": 16,
+                "name": "1 Corinthians",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 47,
+                "chapterCount": 13,
+                "name": "2 Corinthians",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 48,
+                "chapterCount": 6,
+                "name": "Galatians",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 49,
+                "chapterCount": 6,
+                "name": "Ephesians",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 50,
+                "chapterCount": 4,
+                "name": "Philippians",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 51,
+                "chapterCount": 4,
+                "name": "Colossians",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 52,
+                "chapterCount": 5,
+                "name": "1 Thessalonians",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 53,
+                "chapterCount": 3,
+                "name": "2 Thessalonians",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 54,
+                "chapterCount": 6,
+                "name": "1 Timothy",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 55,
+                "chapterCount": 4,
+                "name": "2 Timothy",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 56,
+                "chapterCount": 3,
+                "name": "Titus",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 57,
+                "chapterCount": 1,
+                "name": "Philemon",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 58,
+                "chapterCount": 13,
+                "name": "Hebrews",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 59,
+                "chapterCount": 5,
+                "name": "James",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 60,
+                "chapterCount": 5,
+                "name": "1 Peter",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 61,
+                "chapterCount": 3,
+                "name": "2 Peter",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 62,
+                "chapterCount": 5,
+                "name": "1 John",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 63,
+                "chapterCount": 1,
+                "name": "2 John",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 64,
+                "chapterCount": 1,
+                "name": "3 John",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 65,
+                "chapterCount": 1,
+                "name": "Jude",
+                "type": "new",
+                "vcode": "NIV"
+            },
+            {
+                "bcode": 66,
+                "chapterCount": 22,
+                "name": "Revelation",
+                "type": "new",
+                "vcode": "NIV"
+            }
+        ],
+        "name": "NIV",
+        "vcode": "NIV"
+    }
+]
