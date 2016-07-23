@@ -1,18 +1,35 @@
 import React, { Component, PropTypes } from 'react'
+import classnames from 'classnames'
 
 class ChapterList extends Component {
-	render() {
-		const { book, onSelect, onClose } = this.props;
+	constructor(props, context) {
+		super(props, context)
+		this.state = {
+			selectedChapter: 0
+		}
+	}
 
-		let list = times(book.chapterCount, (i) =>
-			<li key={i}><a onClick={e => onSelect(book.vcode, book.bcode, i + 1)}>{book.name} {i + 1}</a></li>
-		)
+	handleSelect(chapterNumber) {
+		const { book, onSelect } = this.props
+		this.setState({
+			selectedChapter: chapterNumber
+		})
+		onSelect(book.vcode, book.bcode, chapterNumber)
+	}
+
+	render() {
+		const { book, onClose } = this.props
+		const { selectedChapter } = this.state
 
 		return (
 			<div>
-				<button className="btn_close" onClick={onClose}>닫기</button>
+				<button className="btn_close" onClick={onClose}>&lt; 뒤로</button>
 				<ul>
-					{list}
+					{times(book.chapterCount, (i) =>
+						<li key={i}>
+							<a className={classnames({'selected':selectedChapter == (i + 1)})} onClick={e => this.handleSelect(i + 1)}>{book.name} {i + 1}</a>
+						</li>
+					)}
 				</ul>
 			</div>
 		)

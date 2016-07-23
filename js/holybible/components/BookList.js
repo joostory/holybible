@@ -10,7 +10,7 @@ class BookList extends Component {
 
 		return (
 			<div>
-				<button className="btn_close" onClick={onClose}>닫기</button>
+				<button className="btn_close" onClick={onClose}>&lt; 뒤로</button>
 				<ul>
 					{list}
 				</ul>

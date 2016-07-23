@@ -74,7 +74,7 @@ class VerseList extends Component {
 
 		return (
 			<div>
-				<button className="btn_close btn_verse" onClick={onClose}>닫기</button>
+				<button className="btn_close btn_verse" onClick={onClose}>&lt; 뒤로</button>
 				{list}
 			</div>
 		)

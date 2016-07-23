@@ -65,11 +65,11 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _configureStore = __webpack_require__(198);
+	var _configureStore = __webpack_require__(199);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
-	var _actions = __webpack_require__(203);
+	var _actions = __webpack_require__(204);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22367,7 +22367,7 @@
 					_react2.default.createElement(
 						"button",
 						{ className: "btn_close", onClick: onClose },
-						"닫기"
+						"< 뒤로"
 					),
 					_react2.default.createElement(
 						"ul",
@@ -22393,7 +22393,7 @@
 /* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -22404,6 +22404,10 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _classnames = __webpack_require__(192);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22416,49 +22420,66 @@
 	var ChapterList = function (_Component) {
 		_inherits(ChapterList, _Component);
 
-		function ChapterList() {
+		function ChapterList(props, context) {
 			_classCallCheck(this, ChapterList);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(ChapterList).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ChapterList).call(this, props, context));
+
+			_this.state = {
+				selectedChapter: 0
+			};
+			return _this;
 		}
 
 		_createClass(ChapterList, [{
-			key: "render",
-			value: function render() {
+			key: 'handleSelect',
+			value: function handleSelect(chapterNumber) {
 				var _props = this.props;
 				var book = _props.book;
 				var onSelect = _props.onSelect;
-				var onClose = _props.onClose;
 
-
-				var list = times(book.chapterCount, function (i) {
-					return _react2.default.createElement(
-						"li",
-						{ key: i },
-						_react2.default.createElement(
-							"a",
-							{ onClick: function onClick(e) {
-									return onSelect(book.vcode, book.bcode, i + 1);
-								} },
-							book.name,
-							" ",
-							i + 1
-						)
-					);
+				this.setState({
+					selectedChapter: chapterNumber
 				});
+				onSelect(book.vcode, book.bcode, chapterNumber);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _this2 = this;
+
+				var _props2 = this.props;
+				var book = _props2.book;
+				var onClose = _props2.onClose;
+				var selectedChapter = this.state.selectedChapter;
+
 
 				return _react2.default.createElement(
-					"div",
+					'div',
 					null,
 					_react2.default.createElement(
-						"button",
-						{ className: "btn_close", onClick: onClose },
-						"닫기"
+						'button',
+						{ className: 'btn_close', onClick: onClose },
+						'< 뒤로'
 					),
 					_react2.default.createElement(
-						"ul",
+						'ul',
 						null,
-						list
+						times(book.chapterCount, function (i) {
+							return _react2.default.createElement(
+								'li',
+								{ key: i },
+								_react2.default.createElement(
+									'a',
+									{ className: (0, _classnames2.default)({ 'selected': selectedChapter == i + 1 }), onClick: function onClick(e) {
+											return _this2.handleSelect(i + 1);
+										} },
+									book.name,
+									' ',
+									i + 1
+								)
+							);
+						})
 					)
 				);
 			}
@@ -22630,7 +22651,7 @@
 					_react2.default.createElement(
 						"button",
 						{ className: "btn_close btn_verse", onClick: onClose },
-						"닫기"
+						"< 뒤로"
 					),
 					list
 				);
@@ -22651,7 +22672,8 @@
 	exports.default = VerseList;
 
 /***/ },
-/* 198 */
+/* 198 */,
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22663,15 +22685,15 @@
 
 	var _redux = __webpack_require__(176);
 
-	var _reduxThunk = __webpack_require__(199);
+	var _reduxThunk = __webpack_require__(200);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _reduxLogger = __webpack_require__(200);
+	var _reduxLogger = __webpack_require__(201);
 
 	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 
-	var _reducers = __webpack_require__(201);
+	var _reducers = __webpack_require__(202);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -22683,7 +22705,7 @@
 	}
 
 /***/ },
-/* 199 */
+/* 200 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -22711,7 +22733,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 200 */
+/* 201 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -22944,7 +22966,7 @@
 	module.exports = createLogger;
 
 /***/ },
-/* 201 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22953,7 +22975,7 @@
 		value: true
 	});
 
-	var _ActionTypes = __webpack_require__(202);
+	var _ActionTypes = __webpack_require__(203);
 
 	var types = _interopRequireWildcard(_ActionTypes);
 
@@ -22989,7 +23011,7 @@
 	});
 
 /***/ },
-/* 202 */
+/* 203 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -23001,7 +23023,7 @@
 	var RECEIVE_VERSE = exports.RECEIVE_VERSE = "RECEIVE_VERSE";
 
 /***/ },
-/* 203 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23011,9 +23033,9 @@
 	});
 	exports.fetchHolybible = fetchHolybible;
 
-	__webpack_require__(204);
+	__webpack_require__(205);
 
-	var _ActionTypes = __webpack_require__(202);
+	var _ActionTypes = __webpack_require__(203);
 
 	var types = _interopRequireWildcard(_ActionTypes);
 
@@ -23036,7 +23058,7 @@
 	}
 
 /***/ },
-/* 204 */
+/* 205 */
 /***/ function(module, exports) {
 
 	(function(self) {
