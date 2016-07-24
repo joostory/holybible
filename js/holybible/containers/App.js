@@ -45,7 +45,7 @@ class App extends Component {
 		return(
 			<div className={wrapClass}>
 				<header>
-					<h1 className="title">HolyBible</h1>
+					<h1 className="title">Holybible</h1>
 				</header>
 				<section>
 					<VerseSelector versions={holybible.versions} onSelect={this.handleSelectVerse} />

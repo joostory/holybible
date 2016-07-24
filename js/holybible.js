@@ -65,11 +65,11 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _configureStore = __webpack_require__(199);
+	var _configureStore = __webpack_require__(198);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
-	var _actions = __webpack_require__(204);
+	var _actions = __webpack_require__(203);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22028,7 +22028,7 @@
 						_react2.default.createElement(
 							'h1',
 							{ className: 'title' },
-							'HolyBible'
+							'Holybible'
 						)
 					),
 					_react2.default.createElement(
@@ -22672,8 +22672,7 @@
 	exports.default = VerseList;
 
 /***/ },
-/* 198 */,
-/* 199 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22685,15 +22684,15 @@
 
 	var _redux = __webpack_require__(176);
 
-	var _reduxThunk = __webpack_require__(200);
+	var _reduxThunk = __webpack_require__(199);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _reduxLogger = __webpack_require__(201);
+	var _reduxLogger = __webpack_require__(200);
 
 	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 
-	var _reducers = __webpack_require__(202);
+	var _reducers = __webpack_require__(201);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -22705,7 +22704,7 @@
 	}
 
 /***/ },
-/* 200 */
+/* 199 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -22733,7 +22732,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 201 */
+/* 200 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -22966,7 +22965,7 @@
 	module.exports = createLogger;
 
 /***/ },
-/* 202 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22975,7 +22974,7 @@
 		value: true
 	});
 
-	var _ActionTypes = __webpack_require__(203);
+	var _ActionTypes = __webpack_require__(202);
 
 	var types = _interopRequireWildcard(_ActionTypes);
 
@@ -23011,7 +23010,7 @@
 	});
 
 /***/ },
-/* 203 */
+/* 202 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -23023,7 +23022,7 @@
 	var RECEIVE_VERSE = exports.RECEIVE_VERSE = "RECEIVE_VERSE";
 
 /***/ },
-/* 204 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23033,9 +23032,9 @@
 	});
 	exports.fetchHolybible = fetchHolybible;
 
-	__webpack_require__(205);
+	__webpack_require__(204);
 
-	var _ActionTypes = __webpack_require__(203);
+	var _ActionTypes = __webpack_require__(202);
 
 	var types = _interopRequireWildcard(_ActionTypes);
 
@@ -23058,7 +23057,7 @@
 	}
 
 /***/ },
-/* 205 */
+/* 204 */
 /***/ function(module, exports) {
 
 	(function(self) {
