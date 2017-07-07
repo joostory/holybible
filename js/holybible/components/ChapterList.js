@@ -1,6 +1,12 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import { connect } from 'react-redux'
+import { Link, NavLink } from 'react-router-dom'
 
+@connect(state => ({
+	versions: state.holybible.versions
+}), dispatch => ({}))
 class ChapterList extends Component {
 	constructor(props, context) {
 		super(props, context)
@@ -18,16 +24,19 @@ class ChapterList extends Component {
 	}
 
 	render() {
-		const { book, onClose } = this.props
-		const { selectedChapter } = this.state
+		const { versions, match } = this.props
+		const { vcode, bcode } = match.params
+
+		let version = versions.find(item => item.vcode === vcode)
+		let book = version.bibles.find(item => item.bcode == bcode)
 
 		return (
 			<div>
-				<button className="btn_close" onClick={onClose}>&lt; 뒤로</button>
+				<Link to={`/${vcode}`} className="btn_close">&lt; 뒤로</Link>
 				<ul>
 					{times(book.chapterCount, (i) =>
 						<li key={i}>
-							<a className={classnames({'selected':selectedChapter == (i + 1)})} onClick={e => this.handleSelect(i + 1)}>{book.name} {i + 1}</a>
+							<NavLink to={`/${vcode}/${bcode}/${i+1}`} activeClassName='selected'>{book.name} {i + 1}</NavLink>
 						</li>
 					)}
 				</ul>
@@ -36,19 +45,13 @@ class ChapterList extends Component {
 	}
 }
 
-function times(n, func) {
+const times = (n, func) => {
 	let result = []
 	for (let i = 0 ; i < n ; i++) {
 		result[i] = func(i)
 	}
 
 	return result
-}
-
-ChapterList.propTypes = {
-	book: PropTypes.object.isRequired,
-	onSelect: PropTypes.func.isRequired,
-	onClose: PropTypes.func.isRequired,
 }
 
 export default ChapterList;

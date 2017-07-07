@@ -1,24 +1,24 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
+
+@connect(state => ({
+	versions: state.holybible.versions
+}), dispatch => ({}))
 class VersionList extends Component {
 	render() {
 		const { versions, onSelect } = this.props;
 
-		let versionList = versions.map(item =>
-			<li key={item.vcode}><a onClick={e => onSelect(item)}>{item.name}</a></li>
-		);
-
 		return (
 			<ul>
-				{versionList}
+				{ versions.map(item =>
+					<li key={item.vcode}><Link to={`/${item.vcode}`}>{item.name}</Link></li>
+				)}
 			</ul>
 		)
 	}
-}
-
-VersionList.propTypes = {
-	versions: PropTypes.array.isRequired,
-	onSelect: PropTypes.func
 }
 
 export default VersionList

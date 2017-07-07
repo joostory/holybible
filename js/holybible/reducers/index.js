@@ -5,12 +5,12 @@ const initialState = {
 	versions: []
 }
 
-function receiveVerse(state, version, book, chapter, verse) {
+const receiveVerse = (state, version, book, chapter, verse) => {
 	state[version][book][chapter] = verse;
 	return state;
 }
 
-function holybible(state = initialState, action) {
+const holybible = (state = initialState, action) => {
 	switch (action.type) {
 		case types.RECEIVE_HOLYBIBLE:
 			return Object.assign({}, state, { versions: action.bible });

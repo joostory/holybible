@@ -1,5 +1,11 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
+@connect(state => ({
+	versions: state.holybible.versions
+}), dispatch => ({}))
 class VerseList extends Component {
 
 	constructor(props, context) {
@@ -7,20 +13,24 @@ class VerseList extends Component {
 		this.state = {
 			vcode: null,
 			bcode: null,
-			cnum: null,
+			chapter: 0,
 			verses: [],
 			fetching: false
 		}
 	}
 
 	componentDidMount() {
-		const { vcode, bcode, cnum } = this.props
-		this.updateVerses(vcode, bcode, cnum)
+		const { versions, match } = this.props
+		const { vcode, bcode, chapter } = match.params
+
+		this.updateVerses(vcode, bcode, chapter)
 	}
 
-	componentWillReceiveProps(nextProps) {
-		const { vcode, bcode, cnum } = nextProps
-		this.updateVerses(vcode, bcode, cnum)
+	componentWillReceiveProps(newProps) {
+		const { versions, match } = newProps
+		const { vcode, bcode, chapter } = match.params
+
+		this.updateVerses(vcode, bcode, chapter)
 	}
 
 	updateVerses(newVcode, newBcode, newCnum) {
@@ -32,7 +42,7 @@ class VerseList extends Component {
 		this.setState({
 			vcode: newVcode,
 			bcode: newBcode,
-			cnum: newCnum
+			chapter: newCnum
 		})
 
 		fetch(`/bible/${newVcode}/${newBcode}/${newCnum}.json`)
@@ -42,19 +52,21 @@ class VerseList extends Component {
 	}
 
 	render() {
-		const { onClose } = this.props;
-		const { verses, fetching } = this.state;
+		const { vcode, bcode, chapter, verses, fetching } = this.state
 
 		let list;
 		if (fetching) {
 			list = <div className="loading">로딩 중...</div>
 		} else if (verses.length > 0) {
 			list = (
-				<ol>
-					{verses.map((verse, index) =>
-						<li key={index}>{verse.content}</li>
-					)}
-				</ol>
+				<div>
+					<Link to={`/${vcode}/${bcode}`} className="btn_close btn_verse">&lt; 뒤로</Link>
+					<ol>
+						{verses.map((verse, index) =>
+							<li key={index}>{verse.content}</li>
+						)}
+					</ol>
+				</div>
 			)
 		} else {
 			list = (
@@ -72,21 +84,8 @@ class VerseList extends Component {
 			)
 		}
 
-		return (
-			<div>
-				<button className="btn_close btn_verse" onClick={onClose}>&lt; 뒤로</button>
-				{list}
-			</div>
-		)
+		return list
 	}
-}
-
-VerseList.propTypes = {
-	vcode: PropTypes.string,
-	bcode: PropTypes.number,
-	cnum: PropTypes.number,
-
-	onClose: PropTypes.func.isRequired
 }
 
 export default VerseList;

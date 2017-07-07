@@ -1,9 +1,20 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
-import VerseSelector from '../components/VerseSelector'
+
+import { HashRouter, Route } from 'react-router-dom'
+
+import VersionList from '../components/VersionList'
+import BookList from '../components/BookList'
+import ChapterList from '../components/ChapterList'
 import VerseList from '../components/VerseList'
 
+@connect(state => ({
+	holybible: state.holybible
+}), dispatch => ({
+	dispatch: dispatch
+}))
 class App extends Component {
 	constructor(props, context) {
 		super(props, context)
@@ -42,40 +53,34 @@ class App extends Component {
 			"verse": verseOpen
 		})
 
-		return(
-			<div className={wrapClass}>
-				<header>
-					<h1 className="title">Holybible</h1>
-				</header>
-				<section>
-					<VerseSelector versions={holybible.versions} onSelect={this.handleSelectVerse} />
-				</section>
-				<article>
-					<VerseList vcode={vcode} bcode={bcode} cnum={cnum} onClose={this.handleCloseVerse} />
-				</article>
-			</div>
+		if (holybible.versions.length == 0) {
+			return (
+				<div>로딩 중</div>
+			)
+		}
+
+		return (
+			<HashRouter>
+				<div className={wrapClass}>
+					<header>
+						<h1 className="title">Holybible</h1>
+					</header>
+					<section>
+						<Route path="/" exact={true} component={VersionList} />
+						<Route path="/:vcode" exact={true} component={BookList} />
+						<Route path="/:vcode/:bcode" component={ChapterList} />
+					</section>
+					<article>
+						<Route path="/:vcode/:bcode/:chapter" component={VerseList} />
+					</article>
+				</div>
+			</HashRouter>
 		)
 	}
 }
 
 App.propTypes = {
-	holybible: PropTypes.object.isRequired
+	holybible: PropTypes.object
 }
 
-function mapStateToProps(state) {
-  return {
-    holybible: state.holybible
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch: dispatch
-  }
-}
-
-
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(App)
+export default App

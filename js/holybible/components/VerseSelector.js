@@ -1,4 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { HashRouter, Route } from 'react-router-dom'
 
 import VersionList from './VersionList'
 import BookList from './BookList'
@@ -44,19 +46,24 @@ class VerseSelector extends Component {
 		const { versions } = this.props
 		const { selectedBook, selectedVersion } = this.state
 
-		if (selectedBook) {
-			return <ChapterList book={selectedBook} onSelect={this.handleSelectChapter} onClose={this.handleCloseChapter} />
-		} else if (selectedVersion) {
-			return <BookList version={selectedVersion} onSelect={this.handleSelectBook} onClose={this.handleCloseBook} />
-		} else {
-			return <VersionList versions={versions} onSelect={this.handleSelectVersion} />
-		}
-	}
-}
+		return (
+			<HashRouter>
+				<div>
+					<Route path="/" exact={true} component={VersionList} />
+					<Route path="/:vcode" exact={true} component={BookList} />
+					<Route path="/:vcode/:bcode" component={ChapterList} />
+				</div>
+			</HashRouter>
+		)
 
-VerseSelector.propTypes = {
-	versions: PropTypes.array.isRequired,
-	onSelect: PropTypes.func
+		// if (selectedBook) {
+		// 	return <ChapterList book={selectedBook} onSelect={this.handleSelectChapter} onClose={this.handleCloseChapter} />
+		// } else if (selectedVersion) {
+		// 	return <BookList version={selectedVersion} onSelect={this.handleSelectBook} onClose={this.handleCloseBook} />
+		// } else {
+		// 	return <VersionList versions={versions} onSelect={this.handleSelectVersion} />
+		// }
+	}
 }
 
 export default VerseSelector;

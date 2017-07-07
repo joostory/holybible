@@ -1,28 +1,30 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
+@connect(state => ({
+	versions: state.holybible.versions
+}), dispatch => ({}))
 class BookList extends Component {
-	render() {
-		const { version, onSelect, onClose } = this.props
 
-		let list = version.bibles.map(item =>
-			<li key={item.bcode}><a onClick={e => onSelect(item)}>{item.name}</a></li>
-		)
+	render() {
+		const { versions, match } = this.props
+		const { vcode } = match.params
+
+		let version = versions.find(item => item.vcode === vcode)
 
 		return (
 			<div>
-				<button className="btn_close" onClick={onClose}>&lt; 뒤로</button>
+				<Link to={`/`} className="btn_close">&lt; 뒤로</Link>
 				<ul>
-					{list}
+					{ version.bibles.map(item =>
+						<li key={item.bcode}><Link to={`/${vcode}/${item.bcode}`}>{item.name}</Link></li>
+					)}
 				</ul>
 			</div>
 		)
 	}
-}
-
-BookList.propTypes = {
-	version: PropTypes.object.isRequired,
-	onSelect: PropTypes.func.isRequired,
-	onClose: PropTypes.func.isRequired
 }
 
 export default BookList;
