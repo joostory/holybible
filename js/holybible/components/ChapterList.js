@@ -10,17 +10,6 @@ import { Link, NavLink } from 'react-router-dom'
 class ChapterList extends Component {
 	constructor(props, context) {
 		super(props, context)
-		this.state = {
-			selectedChapter: 0
-		}
-	}
-
-	handleSelect(chapterNumber) {
-		const { book, onSelect } = this.props
-		this.setState({
-			selectedChapter: chapterNumber
-		})
-		onSelect(book.vcode, book.bcode, chapterNumber)
 	}
 
 	render() {

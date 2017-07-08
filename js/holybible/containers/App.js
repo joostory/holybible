@@ -11,10 +11,8 @@ import ChapterList from '../components/ChapterList'
 import VerseList from '../components/VerseList'
 
 @connect(state => ({
-	holybible: state.holybible
-}), dispatch => ({
-	dispatch: dispatch
-}))
+	versions: state.holybible.versions
+}), dispatch => ({}))
 class App extends Component {
 	constructor(props, context) {
 		super(props, context)
@@ -24,36 +22,12 @@ class App extends Component {
 			chapter: null,
 			verses: []
 		}
-
-		this.handleSelectVerse = this.handleSelectVerse.bind(this)
-		this.handleCloseVerse = this.handleCloseVerse.bind(this)
-	}
-
-	handleSelectVerse(vcode, bcode, cnum) {
-		this.setState({
-			vcode: vcode,
-			bcode: bcode,
-			cnum: cnum,
-			verseOpen: true
-		})
-	}
-
-	handleCloseVerse() {
-		this.setState({
-			verseOpen: false
-		})
 	}
 
 	render() {
-		const { holybible } = this.props;
-		const { vcode, bcode, cnum, verseOpen } = this.state;
+		const { versions } = this.props
 
-		let wrapClass = classnames({
-			"main": true,
-			"verse": verseOpen
-		})
-
-		if (holybible.versions.length == 0) {
+		if (versions.length == 0) {
 			return (
 				<div>로딩 중</div>
 			)
@@ -61,7 +35,7 @@ class App extends Component {
 
 		return (
 			<HashRouter>
-				<div className={wrapClass}>
+				<div className="main">
 					<header>
 						<h1 className="title">Holybible</h1>
 					</header>
@@ -77,10 +51,6 @@ class App extends Component {
 			</HashRouter>
 		)
 	}
-}
-
-App.propTypes = {
-	holybible: PropTypes.object
 }
 
 export default App
