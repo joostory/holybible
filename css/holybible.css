@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+* {
+	box-sizing:border-box
+}
+
 /**
  * Reset some basic elements
  */
@@ -29,6 +33,10 @@ body {
     font-feature-settings: "kern" 1;
     font-kerning: normal;
 }
+a {
+	color:#333;
+	text-decoration: none
+}
 
 .main {
   overflow:hidden;
@@ -40,12 +48,16 @@ header {
   top:0;
   left:0;
   right:0;
-  height:30px;
-  padding:10px 10px 10px 45px;
-  background: #eee url("/images/ico_holybible.png") no-repeat 10px 10px;
+  height:50px;
+	background-color:#eee;
+  padding:10px;
+}
+header .title {
+	line-height:30px; font-size:24px;
+	padding-left: 35px;
+	background: url("/images/ico_holybible.png") no-repeat 0 0;
   background-size: 30px 30px
 }
-header .title { line-height:30px; font-size:24px }
 
 section {
   position:absolute;
@@ -74,15 +86,34 @@ article {
   overflow:auto
 }
 
-article ol {
+article .btn_verse { display:none }
+article .verses {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	overflow:auto;
+	z-index:2;
+	background-color:#fff
+}
+article .today {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	overflow:auto;
+	z-index:1;
+	text-align:center;
+	padding:50px 0;
+	color:#999;
+}
+
+article .verses ol {
   padding-left:30px;
   margin: 10px
 }
-article ol li {
-
-}
-article .btn_verse { display:none }
-article .today { text-align:center; padding:50px 0; color:#999 }
 
 .btn_close { cursor:pointer; display:block; padding:10px; width:100%; border:0; text-align:left; background-color:#fff; color:#999 }
 .btn_close:hover { background-color:#fafafa }
@@ -90,15 +121,14 @@ article .today { text-align:center; padding:50px 0; color:#999 }
 @media (max-width: 600px) {
   section {
     width:auto;
-    right:0
-  }
-  article {
-    display:none
+    right:0;
+		z-index:1;
   }
   article .btn_verse { display:block }
-  .verse section { display:none }
-  .verse article {
-    display:block;
+  article {
     left:0
   }
+	article .today {
+		display:none
+	}
 }

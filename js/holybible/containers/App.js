@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
 
-import { HashRouter, Route } from 'react-router-dom'
+import { HashRouter, Route, Link } from 'react-router-dom'
 
 import VersionList from '../components/VersionList'
 import BookList from '../components/BookList'
 import ChapterList from '../components/ChapterList'
 import VerseList from '../components/VerseList'
+import Today from '../components/Today'
 
 @connect(state => ({
 	versions: state.holybible.versions
@@ -37,7 +38,7 @@ class App extends Component {
 			<HashRouter>
 				<div className="main">
 					<header>
-						<h1 className="title">Holybible</h1>
+						<h1 className="title"><Link to="/">Holybible</Link></h1>
 					</header>
 					<section>
 						<Route path="/" exact={true} component={VersionList} />
@@ -46,6 +47,7 @@ class App extends Component {
 					</section>
 					<article>
 						<Route path="/:vcode/:bcode/:chapter" component={VerseList} />
+						<Route path="*" component={Today} />
 					</article>
 				</div>
 			</HashRouter>
