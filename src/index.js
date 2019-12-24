@@ -2,12 +2,18 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import App from './containers/App'
-import configureStore from './store/configureStore'
+import {applyMiddleware, createStore} from "redux"
+import {createLogger} from "redux-logger"
 import { fetchHolybible } from './actions'
+import reducer from './reducers'
 
-const store = configureStore()
+const middleware = [createLogger()]
+const store = createStore(
+  reducer,
+  applyMiddleware(...middleware)
+)
 
-store.dispatch(fetchHolybible())
+fetchHolybible(store)
 
 render (
 	<Provider store={store}>

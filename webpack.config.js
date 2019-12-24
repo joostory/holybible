@@ -1,33 +1,57 @@
-var path = require('path');
-var webpack = require("webpack");
+const path = require('path')
+const webpack = require('webpack')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
-module.exports = {
-	entry: [
-		"./js/holybible/index"
-	],
-	output: {
-		path: path.join(__dirname, 'js'),
-		filename: 'holybible.js'
-	},
-	plugins: process.env.NODE_ENV !== "production" ? [] : [
-		new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        drop_console: true
-      }
+const config = {
+  entry: {
+    'holybible': './src/index.js'
+  },
+
+  output: {
+    path: path.join(__dirname, 'dist/js'),
+    filename: '[name].min.js'
+  },
+
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
+
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].min.css',
+      chunkFilename: "[id].css"
     }),
-		new webpack.DefinePlugin({
-		  'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
-		})
-	],
-	module: {
-		loaders: [
-			{
-				test: /\.js$/,
-				loaders: [ 'babel-loader' ],
-				exclude: /node_modules/,
-				include: __dirname
-			}
-		]
-	}
+  ],
 
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: {
+          test: path.resolve(__dirname, "node_modules"),
+        },
+      },
+      {
+        test: /\.(sc|c)ss/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../'
+            }
+          },
+          'css-loader',
+          'sass-loader'
+        ]
+      }
+    ]
+  },
+
+}
+
+module.exports = (env, argv) => {
+  return config
 }

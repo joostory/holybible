@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 @connect(state => ({
@@ -45,10 +45,9 @@ class VerseList extends Component {
 			chapter: newCnum
 		})
 
-		fetch(`/bible/${newVcode}/${newBcode}/${newCnum}.json`)
-			.then(response => response.json())
-			.then(data => this.setState({ verses: data }))
-			.catch(error => console.log(error))
+		axios.get(`/bible/${newVcode}/${newBcode}/${newCnum}.json`)
+			.then(r => this.setState({ verses: r.data }))
+			.catch(e => console.log(e))
 	}
 
 	render() {
