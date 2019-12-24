@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
   entry: {
@@ -23,6 +24,9 @@ const config = {
       filename: '[name].min.css',
       chunkFilename: "[id].css"
     }),
+    new HtmlWebpackPlugin({
+      template: "dist/index.html"
+    })
   ],
 
   module: {
@@ -49,6 +53,9 @@ const config = {
       }
     ]
   },
+  devServer: {
+    port: 8000
+  }
 
 }
 
