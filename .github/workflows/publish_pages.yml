@@ -17,7 +17,10 @@ jobs:
       - name: build
         run: |
           npm ci
-          npm run build
+					npm run build
+			- name: CNAME
+				run: |
+					cp ./CNAME ./dist/CNAME
       - uses: peaceiris/actions-gh-pages@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
