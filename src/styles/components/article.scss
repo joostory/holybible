@@ -15,7 +15,7 @@ article {
     right:0;
     overflow:auto;
     z-index:2;
-    background-color:#fff
+    background-color: $content-background;
   }
   .today {
     position:absolute;
@@ -27,7 +27,11 @@ article {
     z-index:1;
     text-align:center;
     padding:50px 0;
-    color:#999;
+    color: $content-today;
+
+    .content {
+      margin-bottom: 50px;
+    }
   }
 
   .verses ol {
@@ -35,5 +39,13 @@ article {
     margin: 10px
   }
 
+  .main.dark & {
+    .verses {
+      background-color: $dark-content-background;
+    }
+    .today {
+      color: $dark-content-today;
+    }
+  }
 }
 

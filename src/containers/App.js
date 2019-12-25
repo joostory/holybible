@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
 
@@ -36,7 +35,7 @@ class App extends Component {
 
 		return (
 			<HashRouter>
-				<div className="main">
+				<div className={classnames('main', {'dark': false})}>
 					<header>
 						<h1 className="title"><Link to="/">Holybible</Link></h1>
 						<ul className="menu">

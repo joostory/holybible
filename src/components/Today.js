@@ -1,21 +1,33 @@
 import React, { Component } from 'react'
 
-class Today extends Component {
-	render() {
-		return (
-			<div className="today">
-				하나님의 말씀은 살았고 운동력이 있어<br />
-				좌우에 날선 어떤 검보다도 예리하여<br />
-				혼과 영과 및 관절과 골수를 찔러 쪼개기까지 하며<br />
-				또 마음의 생각과 뜻을 감찰하나니<br />
-				지으신 것이 하나라도 그 앞에 나타나지 않음이 없고<br />
-				오직 만물이 우리를 상관하시는 자의<br />
-				눈앞에 벌거벗은 것 같이 드러나느니라<br />
-				<br />
-				(히브리서 4:12, 13 KRV)
-			</div>
-		)
-	}
+function Badge() {
+  return (
+    <a href='https://play.google.com/store/apps/details?id=net.joostory.holybible&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+      <img
+        alt='다운로드하기 Google Play'
+        src='https://play.google.com/intl/en_us/badges/static/images/badges/ko_badge_web_generic.png'
+        width='240'
+      />
+    </a>
+  )
 }
 
-export default Today
+export default function Today() {
+  return (
+    <div className="today">
+      <p className="content">
+        하나님의 말씀은 살았고 운동력이 있어<br />
+        좌우에 날선 어떤 검보다도 예리하여<br />
+        혼과 영과 및 관절과 골수를 찔러 쪼개기까지 하며<br />
+        또 마음의 생각과 뜻을 감찰하나니<br />
+        지으신 것이 하나라도 그 앞에 나타나지 않음이 없고<br />
+        오직 만물이 우리를 상관하시는 자의<br />
+        눈앞에 벌거벗은 것 같이 드러나느니라<br />
+        <br />
+        (히브리서 4:12, 13 KRV)
+      </p>
+
+      <Badge />
+    </div>
+  )
+}
