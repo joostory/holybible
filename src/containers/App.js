@@ -39,6 +39,7 @@ class App extends Component {
 					<header>
 						<h1 className="title"><Link to="/">Holybible</Link></h1>
 						<ul className="menu">
+              <li><a href="https://play.google.com/store/apps/details?id=net.joostory.holybible">Download</a></li>
 							<li><a href="https://oh-my-bible.tistory.com">About</a></li>
 						</ul>
 					</header>
