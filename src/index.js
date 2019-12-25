@@ -6,6 +6,7 @@ import {applyMiddleware, createStore} from "redux"
 import {createLogger} from "redux-logger"
 import { fetchHolybible } from './actions'
 import reducer from './reducers'
+import './styles/holybible.css'
 
 const middleware = [createLogger()]
 const store = createStore(

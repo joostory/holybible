@@ -9,8 +9,8 @@ const config = {
   },
 
   output: {
-    path: path.join(__dirname, 'dist/js'),
-    filename: '[name].min.js'
+    path: path.join(__dirname, 'dist'),
+    filename: 'js/[name].min.js'
   },
 
   optimization: {
@@ -21,11 +21,13 @@ const config = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].min.css',
+      filename: 'css/[name].min.css',
       chunkFilename: "[id].css"
     }),
     new HtmlWebpackPlugin({
-      template: "dist/index.html"
+      template: path.join(__dirname, 'src', 'templates', 'index.html'),
+      filename: "index.html",
+      hash: true
     })
   ],
 
