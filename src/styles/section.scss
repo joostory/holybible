@@ -1,0 +1,25 @@
+section {
+  position:absolute;
+  top:50px;
+  bottom:0;
+  left:0;
+  width:300px;
+  overflow:auto;
+  box-shadow: 1px 0 10px #eee;
+
+  ul {
+    width:100%;
+
+    li {
+      list-style: none;
+
+      a {
+        cursor:pointer; display:block; padding:10px;
+
+        &.selected, &:hover {
+          background-color:#fafafa;
+        }
+      }
+    }
+  }
+}

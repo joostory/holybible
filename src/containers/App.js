@@ -39,6 +39,9 @@ class App extends Component {
 				<div className="main">
 					<header>
 						<h1 className="title"><Link to="/">Holybible</Link></h1>
+						<ul className="menu">
+							<li><a href="https://oh-my-bible.tistory.com">About</a></li>
+						</ul>
 					</header>
 					<section>
 						<Route path="/" exact={true} component={VersionList} />

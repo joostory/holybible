@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+* {
+	box-sizing:border-box
+}
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+input, button, select {
+  outline:none
+}
+
+
+/**
+ * Basic styling
+ */
+body {
+    font: 100 14px/1.6em "FaktSoft", Helvetica, sans-serif;
+    color: #333;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" 1;
+    -moz-font-feature-settings: "kern" 1;
+    -o-font-feature-settings: "kern" 1;
+    font-feature-settings: "kern" 1;
+    font-kerning: normal;
+}
+a {
+	color:#333;
+	text-decoration: none
+}

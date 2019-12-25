@@ -1,0 +1,39 @@
+article {
+  position:absolute;
+  top:50px;
+  bottom:0;
+  right:0;
+  left:300px;
+  overflow:auto;
+
+  .btn_verse { display:none }
+  .verses {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:auto;
+    z-index:2;
+    background-color:#fff
+  }
+  .today {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:auto;
+    z-index:1;
+    text-align:center;
+    padding:50px 0;
+    color:#999;
+  }
+
+  .verses ol {
+    padding-left:30px;
+    margin: 10px
+  }
+
+}
+
