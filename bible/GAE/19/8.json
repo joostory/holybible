@@ -1,0 +1,65 @@
+[
+    {
+        "bcode": 19,
+        "cnum": 8,
+        "content": "\uc5ec\ud638\uc640 \uc6b0\ub9ac \uc8fc\uc5ec \uc8fc\uc758 \uc774\ub984\uc774 \uc628 \ub545\uc5d0 \uc5b4\ucc0c \uadf8\ub9ac \uc544\ub984\ub2e4\uc6b4\uc9c0\uc694 \uc8fc\uc758 \uc601\uad11\uc774 \ud558\ub298\uc744 \ub36e\uc5c8\ub098\uc774\ub2e4",
+        "vcode": "GAE",
+        "vnum": 1
+    },
+    {
+        "bcode": 19,
+        "cnum": 8,
+        "content": "\uc8fc\uc758 \ub300\uc801\uc73c\ub85c \ub9d0\ubbf8\uc554\uc544 \uc5b4\ub9b0 \uc544\uc774\ub4e4\uacfc \uc816\uba39\uc774\ub4e4\uc758 \uc785\uc73c\ub85c \uad8c\ub2a5\uc744 \uc138\uc6b0\uc2ec\uc774\uc5ec \uc774\ub294 \uc6d0\uc218\ub4e4\uacfc \ubcf4\ubcf5\uc790\ub4e4\uc744 \uc7a0\uc7a0\ud558\uac8c \ud558\ub824 \ud558\uc2ec\uc774\ub2c8\uc774\ub2e4",
+        "vcode": "GAE",
+        "vnum": 2
+    },
+    {
+        "bcode": 19,
+        "cnum": 8,
+        "content": "\uc8fc\uc758 \uc190\uac00\ub77d\uc73c\ub85c \ub9cc\ub4dc\uc2e0 \uc8fc\uc758 \ud558\ub298\uacfc \uc8fc\uaed8\uc11c \ubca0\ud480\uc5b4 \ub450\uc2e0 \ub2ec\uacfc \ubcc4\ub4e4\uc744 \ub0b4\uac00 \ubcf4\uc624\ub2c8",
+        "vcode": "GAE",
+        "vnum": 3
+    },
+    {
+        "bcode": 19,
+        "cnum": 8,
+        "content": "\uc0ac\ub78c\uc774 \ubb34\uc5c7\uc774\uae30\uc5d0 \uc8fc\uaed8\uc11c \uadf8\ub97c \uc0dd\uac01\ud558\uc2dc\uba70 \uc778\uc790\uac00 \ubb34\uc5c7\uc774\uae30\uc5d0 \uc8fc\uaed8\uc11c \uadf8\ub97c \ub3cc\ubcf4\uc2dc\ub098\uc774\uae4c",
+        "vcode": "GAE",
+        "vnum": 4
+    },
+    {
+        "bcode": 19,
+        "cnum": 8,
+        "content": "\uadf8\ub97c \ud558\ub098\ub2d8\ubcf4\ub2e4 \uc870\uae08 \ubabb\ud558\uac8c \ud558\uc2dc\uace0 \uc601\ud654\uc640 \uc874\uadc0\ub85c \uad00\uc744 \uc50c\uc6b0\uc168\ub098\uc774\ub2e4",
+        "vcode": "GAE",
+        "vnum": 5
+    },
+    {
+        "bcode": 19,
+        "cnum": 8,
+        "content": "\uc8fc\uc758 \uc190\uc73c\ub85c \ub9cc\ub4dc\uc2e0 \uac83\uc744 \ub2e4\uc2a4\ub9ac\uac8c \ud558\uc2dc\uace0 \ub9cc\ubb3c\uc744 \uadf8\uc758 \ubc1c \uc544\ub798 \ub450\uc168\uc73c\ub2c8",
+        "vcode": "GAE",
+        "vnum": 6
+    },
+    {
+        "bcode": 19,
+        "cnum": 8,
+        "content": "\uace7 \ubaa8\ub4e0 \uc18c\uc640 \uc591\uacfc \ub4e4\uc9d0\uc2b9\uc774\uba70",
+        "vcode": "GAE",
+        "vnum": 7
+    },
+    {
+        "bcode": 19,
+        "cnum": 8,
+        "content": "\uacf5\uc911\uc758 \uc0c8\uc640 \ubc14\ub2e4\uc758 \ubb3c\uace0\uae30\uc640 \ubc14\ub2f7\uae38\uc5d0 \ub2e4\ub2c8\ub294 \uac83\uc774\ub2c8\uc774\ub2e4",
+        "vcode": "GAE",
+        "vnum": 8
+    },
+    {
+        "bcode": 19,
+        "cnum": 8,
+        "content": "\uc5ec\ud638\uc640 \uc6b0\ub9ac \uc8fc\uc5ec \uc8fc\uc758 \uc774\ub984\uc774 \uc628 \ub545\uc5d0 \uc5b4\ucc0c \uadf8\ub9ac \uc544\ub984\ub2e4\uc6b4\uc9c0\uc694",
+        "vcode": "GAE",
+        "vnum": 9
+    }
+]
