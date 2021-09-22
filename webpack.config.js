@@ -25,9 +25,7 @@ const config = {
       chunkFilename: "[id].css"
     }),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'templates', 'index.html'),
-      filename: "index.html",
-      hash: true
+      template: path.join(__dirname, 'src', 'templates', 'index.html')
     })
   ],
 
@@ -36,27 +34,38 @@ const config = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: {
-          test: path.resolve(__dirname, "node_modules"),
-        },
+        options: {
+          exclude: [
+            path.resolve(__dirname, "node_modules"),
+          ]
+        }
       },
       {
-        test: /\.(sc|c)ss/,
+        test: /\.(sc|c)ss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
+              esModule: true,
+              publicPath: path.join(__dirname, 'dist')
             }
           },
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          },
           'sass-loader'
         ]
       }
     ]
   },
   devServer: {
-    port: 8000
+    port: 8000,
+    static: {
+      directory: path.join(__dirname, 'dist')
+    }
   }
 
 }

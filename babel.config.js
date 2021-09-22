@@ -11,14 +11,17 @@ module.exports = (api) => {
           safari: "11.1",
           ie: "11"
         },
-        useBuiltIns: "usage",
-        corejs: "core-js@3"
+        useBuiltIns: "entry",
+        corejs: 3,
+        modules: false
       }],
       "@babel/react"
     ],
     plugins: [
       ["@babel/plugin-proposal-decorators", {legacy: true}],
-      ["@babel/plugin-proposal-class-properties", {loose: true}]
+      ["@babel/plugin-proposal-class-properties", {loose: true}],
+      ["@babel/plugin-proposal-private-methods", { "loose": true }],
+      ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
     ]
   }
 }
