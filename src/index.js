@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import App from './containers/App'
 import {applyMiddleware, createStore} from "redux"
@@ -16,9 +16,9 @@ const store = createStore(
 
 fetchHolybible(store)
 
-render (
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.getElementById('root')
-)
+createRoot(document.getElementById('root'))
+  .render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  )

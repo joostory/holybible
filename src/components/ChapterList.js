@@ -1,38 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
-import { connect } from 'react-redux'
-import { Link, NavLink } from 'react-router-dom'
-
-@connect(state => ({
-	versions: state.holybible.versions
-}), dispatch => ({}))
-class ChapterList extends Component {
-	constructor(props, context) {
-		super(props, context)
-	}
-
-	render() {
-		const { versions, match } = this.props
-		const { vcode, bcode } = match.params
-
-		let version = versions.find(item => item.vcode === vcode)
-		let book = version.bibles.find(item => item.bcode == bcode)
-
-		return (
-			<div>
-				<Link to={`/${vcode}`} className="btn_close">&lt; 뒤로</Link>
-				<ul>
-					{times(book.chapterCount, (i) =>
-						<li key={i}>
-							<NavLink to={`/${vcode}/${bcode}/${i+1}`} activeClassName='selected'>{book.name} {i + 1}</NavLink>
-						</li>
-					)}
-				</ul>
-			</div>
-		)
-	}
-}
+import React from 'react'
+import { useSelector } from 'react-redux'
+import { Link, NavLink, useParams } from 'react-router-dom'
 
 const times = (n, func) => {
 	let result = []
@@ -43,4 +11,28 @@ const times = (n, func) => {
 	return result
 }
 
-export default ChapterList;
+export default function ChapterList() {
+  const versions = useSelector(state => state.holybible.versions)
+  const { vcode, bcode } = useParams()
+
+  let version = versions.find(item => item.vcode === vcode)
+  let book = version.bibles.find(item => item.bcode == bcode)
+
+  return (
+    <div>
+      <Link to={`/${vcode}`} className="btn_close">&lt; 뒤로</Link>
+      <ul>
+        {times(book.chapterCount, (i) =>
+          <li key={i}>
+            <NavLink
+              to={`/${vcode}/${bcode}/${i+1}`}
+              className={({isActive}) => isActive? "selected":""}
+            >
+              {book.name} {i + 1}
+            </NavLink>
+          </li>
+        )}
+      </ul>
+    </div>
+  )
+}
