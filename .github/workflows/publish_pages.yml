@@ -23,10 +23,13 @@ jobs:
       - name: CNAME
         run: |
           cp ./CNAME ./dist/CNAME
-      - uses: peaceiris/actions-gh-pages@v2
+      - uses: peaceiris/actions-gh-pages@v3
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./dist
         with:
-          forceOrphan: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publich_branch: gh-pages
+          publish_dir: ./dist
+          force_orphan: true
