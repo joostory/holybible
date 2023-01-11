@@ -2,6 +2,7 @@ import BibleList from "components/bible/BibleList";
 import Content from "components/layout/Content";
 import Layout from "components/layout/Layout";
 import Sidebar from "components/layout/Sidebar";
+import Today from "components/Today";
 import { useRouter } from "next/router";
 
 export default function VersionPage() {
@@ -10,11 +11,7 @@ export default function VersionPage() {
   return (
     <Layout>
       <Content>
-        <div className="flex flex-col items-center justify-center h-full">
-          <div className="text-3xl font-bold underline">
-            version
-          </div>
-        </div>
+        <Today />
       </Content>
       <Sidebar>
         <BibleList

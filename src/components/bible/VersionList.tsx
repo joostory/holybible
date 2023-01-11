@@ -1,4 +1,3 @@
-import axios from "axios"
 import { Version } from "domain/version"
 import Link from "next/link"
 import { useRecoilValue } from "recoil"

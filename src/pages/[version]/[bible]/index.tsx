@@ -3,6 +3,7 @@ import ChapterList from "components/bible/ChatperList";
 import Content from "components/layout/Content";
 import Layout from "components/layout/Layout";
 import Sidebar from "components/layout/Sidebar";
+import Today from "components/Today";
 import { useRouter } from "next/router";
 
 export default function BiblePage() {
@@ -11,11 +12,7 @@ export default function BiblePage() {
   return (
     <Layout>
       <Content>
-        <div className="flex flex-col items-center justify-center h-full">
-          <div className="text-3xl font-bold underline">
-            bible
-          </div>
-        </div>
+        <Today />
       </Content>
       <Sidebar>
         <ChapterList

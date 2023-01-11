@@ -6,8 +6,7 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="drawer drawer-mobile">
-      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+    <div className='fixed top-16 bottom-0 left-0 right-0'>
       { children }
     </div>
   )

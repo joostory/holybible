@@ -6,11 +6,8 @@ type SidebarProps = {
 
 export default function Sidebar({ children }: SidebarProps) {
   return (
-    <div className="drawer-side">
-      <label htmlFor="my-drawer" className="drawer-overlay"></label> 
-      <div className="w-60">
-        { children }
-      </div>
+    <div className="absolute w-60 left-0 top-0 bottom-0 overflow-y-auto">
+      { children }
     </div>
   )
 }

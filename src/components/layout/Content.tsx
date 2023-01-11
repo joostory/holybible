@@ -6,7 +6,7 @@ type ContentProps = {
 
 export default function Content({ children }: ContentProps) {
   return (
-    <div className="drawer-content">
+    <div className="absolute left-60 right-0 top-0 bottom-0">
       {children}
     </div>
   )

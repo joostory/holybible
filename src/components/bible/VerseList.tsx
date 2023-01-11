@@ -17,7 +17,7 @@ export default function VerseList({vcode, bcode, cnum}: VerseListProps) {
   }, [vcode, bcode, cnum])
 
   return (
-    <ol className="p-2">
+    <ol className="p-4 pl-12 list-decimal">
       {verses.map(v =>
         <li key={v.vnum}>{v.content}</li>
       )}

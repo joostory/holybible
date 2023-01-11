@@ -11,7 +11,7 @@ type ComponentProps = {
 
 function AppComponent({children}: ComponentProps) {
   const setVersions = useSetRecoilState(bibleState)
-  const [loading, setLoading] = useState<Boolean>(false)
+  const [loading, setLoading] = useState<Boolean>(true)
   useEffect(() => {
     axios.get("/bible.json")
       .then(r => setVersions(r.data))
@@ -19,7 +19,11 @@ function AppComponent({children}: ComponentProps) {
   }, [])
 
   if (loading) {
-    return <div>로딩 중</div>
+    return (
+      <div className='flex items-center justify-center h-screen'>
+        <progress className="progress w-56"></progress>
+      </div>
+    )
   }
 
   return (
