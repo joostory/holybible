@@ -4,7 +4,7 @@ _site
 Gemfile.lock
 node_modules
 
-public
+.next
 dist/index.html
 dist/js
 dist/css
