@@ -6,26 +6,22 @@ on:
       - v*
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-          cache-dependency-path: package-lock.json
-      - name: build
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install and Build 🔧
         run: |
           npm ci
-          npm run build
-      - name: CNAME
-        run: |
-          cp ./CNAME ./dist/CNAME
-      - uses: peaceiris/actions-gh-pages@v3
+          npm run export
+          touch out/.nojekyll
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publich_branch: gh-pages
-          publish_dir: ./dist
-          force_orphan: true
+          branch: gh-pages
+          folder: out
