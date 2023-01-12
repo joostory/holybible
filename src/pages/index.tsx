@@ -5,8 +5,13 @@ import VersionList from "components/bible/VersionList";
 import Head from "next/head";
 import Today from "components/Today";
 import { APP_NAME } from "domain/app";
+import { Version, getVersions } from "domain/bible";
 
-export default function HomePage() {
+type HomePageProps = {
+  versions: Array<Version>
+}
+
+export default function HomePage({versions}: HomePageProps) {
   return (
     <>
       <Head>
@@ -19,9 +24,17 @@ export default function HomePage() {
           </Content>
         </div>
         <Sidebar>
-          <VersionList />
+          <VersionList versions={versions} />
         </Sidebar>
       </Layout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      versions: getVersions()
+    }
+  }
 }

@@ -1,24 +1,17 @@
-import BibleList from "components/bible/BibleList";
 import ChapterList from "components/bible/ChatperList";
 import Content from "components/layout/Content";
 import Layout from "components/layout/Layout";
 import Sidebar from "components/layout/Sidebar";
 import Today from "components/Today";
-import { Version } from "domain/version";
+import { Version, getVersion, getBibles, getVersions, Bible, getBible } from "domain/bible";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { useRecoilValue } from "recoil";
-import { bibleState } from "state/bible";
 
-export default function BiblePage() {
-  const router = useRouter()
-  const vcode: string = router.query.version? router.query.version.toString() : ""
-  const bcode: number = Number(router.query.bible)
+type BiblePageProps = {
+  version: Version,
+  bible: Bible
+}
 
-  const versions: Version[] = useRecoilValue(bibleState)
-  const version = versions.find(v => v.vcode == vcode)
-  const bible = version?.bibles.find(b => b.bcode == bcode)
-
+export default function BiblePage({ version, bible }: BiblePageProps) {
   return (
     <>
       <Head>
@@ -32,11 +25,34 @@ export default function BiblePage() {
         </div>
         <Sidebar>
           <ChapterList
-            vcode={vcode}
-            bcode={bcode}
+            version={version}
+            bible={bible}
           />
         </Sidebar>
       </Layout>
     </>
   )
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: getVersions().flatMap(v =>
+      getBibles(v.vcode).map(b => ({
+        params: {
+          version: v.vcode,
+          bible: b.bcode.toString()
+        }
+      }))
+    ),
+    fallback: false
+  }
+}
+
+export async function getStaticProps({ params }: any) {
+  return {
+    props: {
+      version: getVersion(params.version),
+      bible: getBible(params.version, params.bible)
+    }
+  }
 }

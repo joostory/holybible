@@ -1,11 +1,11 @@
-import { Version } from "domain/version"
+import { Version } from "domain/bible"
 import Link from "next/link"
-import { useRecoilValue } from "recoil"
-import { bibleState } from "state/bible"
 
-export default function VersionList() {
-  const versions: Version[] = useRecoilValue(bibleState)
+type VersionListProps = {
+  versions: Array<Version>
+}
 
+export default function VersionList({versions}: VersionListProps) {
   return (
     <ul className="menu p-4">
       {versions.map(v =>
