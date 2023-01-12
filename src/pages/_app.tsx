@@ -1,9 +1,10 @@
 import 'styles/globals.css'
 import type { AppProps } from 'next/app'
-import { RecoilRoot, useRecoilState, useSetRecoilState } from 'recoil'
+import { RecoilRoot, useSetRecoilState } from 'recoil'
 import { bibleState } from 'state/bible'
 import { ReactNode, useEffect, useState } from 'react'
 import axios from 'axios'
+import Loading from 'components/Loading'
 
 type ComponentProps = {
   children: ReactNode
@@ -12,6 +13,7 @@ type ComponentProps = {
 function AppComponent({children}: ComponentProps) {
   const setVersions = useSetRecoilState(bibleState)
   const [loading, setLoading] = useState<Boolean>(true)
+
   useEffect(() => {
     axios.get("/bible.json")
       .then(r => setVersions(r.data))
@@ -19,11 +21,7 @@ function AppComponent({children}: ComponentProps) {
   }, [])
 
   if (loading) {
-    return (
-      <div className='flex items-center justify-center h-screen'>
-        <progress className="progress w-56"></progress>
-      </div>
-    )
+    return <Loading />
   }
 
   return (

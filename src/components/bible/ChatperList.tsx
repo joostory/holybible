@@ -24,7 +24,9 @@ export default function ChapterList({ vcode, bcode, cnum }: ChapterListProps) {
       </li>
       {Array.from(Array(bible.chapterCount).keys()).map(i =>
         <li key={i}>
-          <Link href={`/${vcode}/${bcode}/${i + 1}`}>{bible.name} {i+1}</Link>
+          <Link href={`/${vcode}/${bcode}/${i + 1}`} className={i+1 == cnum? "active": ""}>
+            {bible.name} {i+1}
+          </Link>
         </li>
       )}
     </ul>
