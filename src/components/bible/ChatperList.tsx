@@ -3,9 +3,9 @@ import { useRecoilValue } from "recoil"
 import { bibleState } from "state/bible"
 
 type ChapterListProps = {
-  vcode: string | any,
-  bcode: string | any,
-  cnum?: number | any
+  vcode: string,
+  bcode: number,
+  cnum?: number
 }
 
 export default function ChapterList({ vcode, bcode, cnum }: ChapterListProps) {

@@ -5,6 +5,8 @@ import { bibleState } from 'state/bible'
 import { ReactNode, useEffect, useState } from 'react'
 import axios from 'axios'
 import Loading from 'components/Loading'
+import { APP_NAME } from 'domain/app'
+import Head from 'next/head'
 
 type ComponentProps = {
   children: ReactNode
@@ -35,6 +37,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <AppComponent>
+        <Head>
+          <title>{APP_NAME}</title>
+        </Head>
         <Component {...pageProps} />
       </AppComponent>
     </RecoilRoot>

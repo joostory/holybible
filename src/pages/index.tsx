@@ -4,12 +4,13 @@ import Layout from "components/layout/Layout";
 import VersionList from "components/bible/VersionList";
 import Head from "next/head";
 import Today from "components/Today";
+import { APP_NAME } from "domain/app";
 
 export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Oh My Bible</title>
+        <title>{APP_NAME}</title>
       </Head>
       <Layout>
         <Content>

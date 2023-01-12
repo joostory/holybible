@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil"
 import { bibleState } from "state/bible"
 
 type BibleListProps = {
-  vcode: string | any
+  vcode: string
 }
 
 export default function BibleList({ vcode }: BibleListProps) {
