@@ -25,9 +25,11 @@ export default function BiblePage() {
         <title>{version?.name} {bible?.name}</title>
       </Head>
       <Layout>
-        <Content>
-          <Today />
-        </Content>
+        <div className="max-[768px]:hidden">
+          <Content>
+            <Today />
+          </Content>
+        </div>
         <Sidebar>
           <ChapterList
             vcode={vcode}

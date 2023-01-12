@@ -32,13 +32,15 @@ export default function VersePage() {
             cnum={cnum}
           />
         </Content>
-        <Sidebar>
-          <ChapterList
-            vcode={vcode}
-            bcode={bcode}
-            cnum={cnum}
-          />
-        </Sidebar>
+        <div className="max-[768px]:hidden">
+          <Sidebar>
+            <ChapterList
+              vcode={vcode}
+              bcode={bcode}
+              cnum={cnum}
+            />
+          </Sidebar>
+        </div>
       </Layout>
     </>
   )

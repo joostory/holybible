@@ -21,9 +21,11 @@ export default function VersionPage() {
         <title>{version?.name}</title>
       </Head>
       <Layout>
-        <Content>
-          <Today />
-        </Content>
+        <div className="max-[768px]:hidden">
+          <Content>
+            <Today />
+          </Content>
+        </div>
         <Sidebar>
           <BibleList
             vcode={vcode}

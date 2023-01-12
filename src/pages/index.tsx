@@ -13,9 +13,11 @@ export default function HomePage() {
         <title>{APP_NAME}</title>
       </Head>
       <Layout>
-        <Content>
-          <Today />
-        </Content>
+        <div className="max-[768px]:hidden">
+          <Content>
+            <Today />
+          </Content>
+        </div>
         <Sidebar>
           <VersionList />
         </Sidebar>

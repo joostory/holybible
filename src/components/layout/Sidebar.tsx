@@ -6,7 +6,7 @@ type SidebarProps = {
 
 export default function Sidebar({ children }: SidebarProps) {
   return (
-    <div className="absolute w-60 left-0 top-0 bottom-0 overflow-y-auto bg-base-200 bg-content">
+    <div className="absolute inset-0 md:right-auto md:w-60 overflow-y-auto bg-base-200 bg-content">
       { children }
     </div>
   )

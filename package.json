@@ -4,7 +4,7 @@
   "description": "holybible webapp",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "start": "next start",
     "build": "next build",
     "lint": "next lint",
