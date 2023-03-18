@@ -1,3 +1,4 @@
+import List, { ListItem } from "components/layout/List"
 import { Version } from "domain/bible"
 import Link from "next/link"
 
@@ -7,12 +8,12 @@ type VersionListProps = {
 
 export default function VersionList({versions}: VersionListProps) {
   return (
-    <ul className="menu p-4">
+    <List>
       {versions.map(v =>
-        <li key={v.name}>
+        <ListItem key={v.name}>
           <Link href={`/${v.vcode}`}>{v.name}</Link>
-        </li>
+        </ListItem>
       )}
-    </ul>
+    </List>
   )
 }

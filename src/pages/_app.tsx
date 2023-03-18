@@ -1,4 +1,4 @@
-import 'styles/globals.css'
+import 'styles/index.css'
 import type { AppProps } from 'next/app'
 import Script from 'next/script'
 import { RecoilRoot } from 'recoil'
@@ -34,8 +34,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image" content="/images/holybible.png" />
         <meta property="og:description" content="간단히 볼 수 있는 성경 웹버전" />
         <meta property="fb:app_id" content="133777953366478" />
-        <script src='/ga.js'></script>
       </Head>
+      <Script src='/ga.js' />
       <Component {...pageProps} />
     </RecoilRoot>
   )

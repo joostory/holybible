@@ -1,3 +1,5 @@
+import { ChevronLeftIcon } from "@heroicons/react/24/outline"
+import List, { ListItem } from "components/layout/List"
 import { Bible } from "domain/bible"
 import Link from "next/link"
 
@@ -7,13 +9,17 @@ type BibleListProps = {
 
 export default function BibleList({ bibles }: BibleListProps) {
   return (
-    <ul className="menu p-4">
-      <li><Link href="/">&lt;</Link></li>
+    <List>
+      <ListItem>
+        <Link href="/">
+          <ChevronLeftIcon className="h-5 w-5" />
+        </Link>
+      </ListItem>
       {bibles.map(b =>
-        <li key={b.bcode}>
+        <ListItem key={b.bcode}>
           <Link href={`/${b.vcode}/${b.bcode}`}>{b.name}</Link>
-        </li>
+        </ListItem>
       )}
-    </ul>
+    </List>
   )
 }

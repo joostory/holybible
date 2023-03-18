@@ -1,7 +1,13 @@
+import { Stylish } from 'next/font/google'
+
+const todayFont = Stylish({
+  weight: "400"
+})
+
 export default function Today() {
   return (
     <div className="flex flex-col items-center justify-center h-full">
-      <p className="text-center mb-16">
+      <p className={`text-center mb-16 text-lg tracking-tighter leading-relaxed ${todayFont.className}`}>
         하나님의 말씀은 살았고 운동력이 있어<br />
         좌우에 날선 어떤 검보다도 예리하여<br />
         혼과 영과 및 관절과 골수를 찔러 쪼개기까지 하며<br />

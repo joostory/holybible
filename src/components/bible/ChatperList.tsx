@@ -1,5 +1,7 @@
+import List, { ListItem } from "components/layout/List"
 import { Bible, Version } from "domain/bible"
 import Link from "next/link"
+import { ChevronLeftIcon } from '@heroicons/react/24/outline'
 
 type ChapterListProps = {
   version: Version,
@@ -9,17 +11,19 @@ type ChapterListProps = {
 
 export default function ChapterList({ version, bible, chapter }: ChapterListProps) {
   return (
-    <ul className="menu p-4">
-      <li>
-        <Link href={`/${version.vcode}`}>&lt;</Link>
-      </li>
+    <List>
+      <ListItem>
+        <Link href={`/${version.vcode}`}>
+          <ChevronLeftIcon className="h-5 w-5" />
+        </Link>
+      </ListItem>
       {Array.from(Array(bible.chapterCount).keys()).map(i =>
-        <li key={i}>
+        <ListItem key={i}>
           <Link href={`/${version.vcode}/${bible.bcode}/${i + 1}`} className={i+1 == chapter? "active": ""}>
             {bible.name} {i+1}
           </Link>
-        </li>
+        </ListItem>
       )}
-    </ul>
+    </List>
   )
 }
