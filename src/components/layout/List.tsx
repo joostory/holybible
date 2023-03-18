@@ -2,7 +2,8 @@ import { ReactNode } from "react"
 import { Do_Hyeon } from 'next/font/google'
 
 const listFont = Do_Hyeon({
-  weight: '400'
+  weight: '400',
+  subsets: ['latin']
 })
 
 interface ListItemProps {

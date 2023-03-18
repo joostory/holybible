@@ -4,10 +4,12 @@ import Link from "next/link"
 import { Do_Hyeon, Stylish } from 'next/font/google'
 
 const buttonFont = Do_Hyeon({
-  weight: '400'
+  weight: '400',
+  subsets: ['latin']
 })
 const contentFont = Stylish({
-  weight: "400"
+  weight: "400",
+  subsets: ['latin']
 })
 
 

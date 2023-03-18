@@ -7,11 +7,13 @@ import Link from "next/link"
 import { Gugi } from 'next/font/google'
 
 const appNameFont = Gugi({
-  weight: '400'
+  weight: '400',
+  subsets: ['latin']
 })
 
 const appListFont = Gugi({
-  weight: '400'
+  weight: '400',
+  subsets: ['latin']
 })
 
 function ThemeButton() {
