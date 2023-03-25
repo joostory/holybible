@@ -1,13 +1,13 @@
 import { ChevronLeftIcon } from "@heroicons/react/24/outline"
 import { Bible, Version, Verse } from "domain/bible"
 import Link from "next/link"
-import { Do_Hyeon, Stylish } from 'next/font/google'
+import { Do_Hyeon, Noto_Serif_KR } from 'next/font/google'
 
 const buttonFont = Do_Hyeon({
   weight: '400',
   subsets: ['latin']
 })
-const contentFont = Stylish({
+const contentFont = Noto_Serif_KR({
   weight: "400",
   subsets: ['latin']
 })
@@ -43,7 +43,7 @@ export default function VerseList({version, bible, chapter, verses}: VerseListPr
       />
       <ol className="p-6 pl-12 list-decimal">
         {verses?.map(v =>
-          <li key={v.vnum} className={`pl-2 mb-1 leading-relaxed tracking-tighter`}>
+          <li key={v.vnum} className={`pl-2 mb-1 leading-relaxed tracking-tighter ${contentFont.className}`}>
             {v.content}
           </li>
         )}
