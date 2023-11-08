@@ -24,7 +24,7 @@ interface ListProps {
 
 export default function List({children}: ListProps) {
   return (
-    <ul className="menu p-4">
+    <ul className="menu p-4 text-base gap-y-2">
       {children}
     </ul>
   )

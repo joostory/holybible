@@ -3,8 +3,10 @@ module.exports = {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {},
+  daisyui: {
+    themes: [
+      'bumblebee', 'halloween'
+    ],
   },
   plugins: [
     require("@tailwindcss/typography"),

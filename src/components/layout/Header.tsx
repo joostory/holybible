@@ -39,7 +39,7 @@ function ThemeButton() {
 
 export default function Header() {
   return (
-    <div className="navbar bg-neutral text-neutral-content">
+    <div className="navbar bg-base-300 text-base-content">
       <div className="flex-1 flex ml-4">
         <img src="/images/ico_holybible.png" className="h-6 mr-3 flex-none" />
         <Link href={'/'} className={`normal-case text-xl flex-1 font-bold ${appNameFont.className}`}>
@@ -47,7 +47,7 @@ export default function Header() {
         </Link>
       </div>
       <div className="flex-none">
-        <ul className={`menu menu-compact menu-horizontal px-1 ${appListFont.className}`}>
+        <ul className={`menu menu-compact menu-horizontal px-1 py-0 ${appListFont.className}`}>
           <li>
             <ThemeButton />
           </li>
