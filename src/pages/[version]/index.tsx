@@ -44,7 +44,10 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }: any) {
+type VersionPageParams = {
+  version: string
+}
+export async function getStaticProps({params}: {params: VersionPageParams}) {
   const version = getVersion(params.version)
 
   return {

@@ -60,7 +60,13 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }: any) {
+type VersePageParams = {
+  version: string,
+  bible: number,
+  chapter: number,
+}
+
+export async function getStaticProps({params}: {params: VersePageParams}) {
   return {
     props: {
       version: getVersion(params.version),

@@ -48,7 +48,12 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }: any) {
+type BiblePageParams = {
+  version: string,
+  bible: number,
+}
+
+export async function getStaticProps({params}: {params: BiblePageParams}) {
   return {
     props: {
       version: getVersion(params.version),
