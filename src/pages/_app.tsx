@@ -2,13 +2,14 @@ import 'styles/globals.css'
 import 'styles/index.css'
 import type { AppProps } from 'next/app'
 import Script from 'next/script'
-import { RecoilRoot } from 'recoil'
+import { Provider } from 'jotai'
+
 import { APP_NAME } from 'domain/app'
 import Head from 'next/head'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <RecoilRoot>
+    <Provider>
       <Head>
         <title>{APP_NAME}</title>
         <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png" />
@@ -38,6 +39,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Script src='/ga.js' />
       <Component {...pageProps} />
-    </RecoilRoot>
+    </Provider>
   )
 }

@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 import Header from "components/layout/Header"
-import { useRecoilValue } from "recoil"
+import { useAtomValue } from 'jotai'
 import { themeState } from "state/theme"
 
 type LayoutProps = {
@@ -8,7 +8,7 @@ type LayoutProps = {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const theme = useRecoilValue(themeState)
+  const theme = useAtomValue(themeState)
 
   return (
     <div className='h-screen flex flex-col' data-theme={theme}>

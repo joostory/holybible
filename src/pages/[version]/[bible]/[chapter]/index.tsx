@@ -17,7 +17,7 @@ export default function VersePage({ version, bible, chapter, verses }: VersePage
   return (
     <>
       <Head>
-        <title>{version?.name} {bible?.name} {chapter}</title>
+        <title>{`${version?.name} ${bible?.name} ${chapter}`}</title>
       </Head>
       <Layout>
         <Content>

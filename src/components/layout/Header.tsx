@@ -1,6 +1,6 @@
 import { THEME_DARK, THEME_LIGHT } from "domain/theme"
 import { ChangeEvent } from "react"
-import { useRecoilState } from "recoil"
+import { useAtom } from 'jotai'
 import { themeState } from "state/theme"
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 import Link from "next/link"
@@ -17,7 +17,7 @@ const appListFont = Gugi({
 })
 
 function ThemeButton() {
-  const [theme, setTheme] = useRecoilState(themeState)
+  const [theme, setTheme] = useAtom(themeState)
 
   function handleChangeTheme(e: ChangeEvent<HTMLInputElement>) {
     setTheme(e.target.checked? THEME_LIGHT : THEME_DARK)

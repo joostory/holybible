@@ -15,7 +15,7 @@ export default function BiblePage({ version, bible }: BiblePageProps) {
   return (
     <>
       <Head>
-        <title>{version?.name} {bible?.name}</title>
+        <title>{`${version?.name} ${bible?.name}`}</title>
       </Head>
       <Layout>
         <div className="max-[768px]:hidden">

@@ -1,7 +1,4 @@
 import { THEME_DARK } from "domain/theme";
-import { atom } from "recoil";
+import { atom } from 'jotai'
 
-export const themeState = atom<string>({
-  key: 'themeState',
-  default: THEME_DARK
-})
+export const themeState = atom<string>(THEME_DARK)
