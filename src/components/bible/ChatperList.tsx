@@ -19,7 +19,7 @@ export default function ChapterList({ version, bible, chapter }: ChapterListProp
       </ListItem>
       {Array.from(Array(bible.chapterCount).keys()).map(i =>
         <ListItem key={i}>
-          <Link href={`/${version.vcode}/${bible.bcode}/${i + 1}`} className={i+1 == chapter? "active": ""}>
+          <Link href={`/${version.vcode}/${bible.bcode}/${i + 1}`} className={i+1 == chapter? "menu-active": ""}>
             {bible.name} {i+1}
           </Link>
         </ListItem>
