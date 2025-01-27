@@ -19,13 +19,6 @@ export default function Today() {
         <br />
         (히브리서 4:12, 13 KRV)
       </p>
-      <a href='https://play.google.com/store/apps/details?id=net.joostory.holybible&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-        <img
-          alt='다운로드하기 Google Play'
-          src='https://play.google.com/intl/en_us/badges/static/images/badges/ko_badge_web_generic.png'
-          width='240'
-        />
-      </a>
     </div>
   )
 }

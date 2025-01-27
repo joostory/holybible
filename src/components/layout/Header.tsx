@@ -51,16 +51,6 @@ export default function Header() {
           <li>
             <ThemeButton />
           </li>
-          <li>
-            <a href="https://play.google.com/store/apps/details?id=net.joostory.holybible" target="_blank" className="text-xs">
-              Download
-            </a>
-          </li>
-          <li>
-            <a href="https://oh-my-bible.tistory.com/" target="_blank" className="text-xs">
-              About
-            </a>
-          </li>
         </ul>
       </div>
     </div>
