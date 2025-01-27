@@ -51,6 +51,11 @@ export default function Header() {
           <li>
             <ThemeButton />
           </li>
+          <li>
+            <a href='https://github.com/joostory/oh-my-bible-epub/releases/latest' target="_blank" className="text-xs">
+              Download
+            </a>
+          </li>
         </ul>
       </div>
     </div>
