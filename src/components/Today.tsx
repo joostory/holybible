@@ -2,6 +2,7 @@ import { Stylish } from 'next/font/google'
 
 const todayFont = Stylish({
   weight: "400",
+  subsets: ['latin']
 })
 
 export default function Today() {
