@@ -1,4 +1,4 @@
-name: Publish Pages
+name: Check Lint
 
 on:
   push:
