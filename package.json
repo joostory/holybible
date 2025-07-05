@@ -45,7 +45,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "axios": "^1.2.2",
     "classnames": "^2.2.6",
-    "daisyui": "^5.0.0-beta.2",
+    "daisyui": "^5.0.43",
     "jotai": "^2.11.0",
     "next": "^15.0.1",
     "react": "^19.0.0",

@@ -3,7 +3,6 @@ import 'styles/index.css'
 import type { AppProps } from 'next/app'
 import Script from 'next/script'
 import { Provider } from 'jotai'
-
 import { APP_NAME } from 'domain/app'
 import Head from 'next/head'
 
