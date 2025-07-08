@@ -1,6 +1,6 @@
 {
   "name": "holybible",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "holybible webapp",
   "main": "index.js",
   "scripts": {
