@@ -43,7 +43,7 @@ export default function VerseList({version, bible, chapter, verses}: VerseListPr
       />
       <ol className="p-6 pl-12 list-decimal">
         {verses?.map(v =>
-          <li key={v.vnum} className={`pl-2 mb-1 leading-relaxed tracking-tighter ${contentFont.className}`}>
+          <li key={v.vnum} className={`pl-3 mb-2 leading-relaxed tracking-tighter ${contentFont.className}`}>
             {v.content}
           </li>
         )}

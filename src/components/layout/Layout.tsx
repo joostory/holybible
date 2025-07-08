@@ -28,7 +28,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className='h-screen flex flex-col' data-theme={theme}>
       <Header onSearchClick={() => setOpen(true)} />
-      <div className='fixed top-16 bottom-0 left-0 right-0'>
+      <div className='absolute top-16 left-0 right-0 bottom-0'>
         { children }
       </div>
       <Search open={open} onOpenChange={setOpen} />
