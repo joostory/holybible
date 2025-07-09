@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useState } from "react"
 import Header from "components/layout/Header"
 import { useAtomValue } from 'jotai'
 import { themeState } from "state/theme"
-import { Search } from "../bible/Search"
+import { Search } from "components/bible/Search"
 
 type LayoutProps = {
   children: ReactNode

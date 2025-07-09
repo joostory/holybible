@@ -10,8 +10,10 @@ interface Props {
 export function Search({ open, onOpenChange }: Props) {
   const router = useRouter();
   const [query, setQuery] = useState('');
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const resultsContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const dialogNode = dialogRef.current;
@@ -47,10 +49,38 @@ export function Search({ open, onOpenChange }: Props) {
     bible.abbreviations.some(abbr => abbr.toLowerCase().includes(query.toLowerCase()))
   );
 
+  useEffect(() => {
+    setSelectedIndex(0);
+  }, [query]);
+
+  useEffect(() => {
+    if (resultsContainerRef.current) {
+      const selectedElement = resultsContainerRef.current.children[selectedIndex] as HTMLDivElement;
+      if (selectedElement) {
+        selectedElement.scrollIntoView({ block: 'nearest' });
+      }
+    }
+  }, [selectedIndex]);
+
   const handleSelect = (bcode: number) => {
     const version = router.query.version || 'GAE';
     router.push(`/${version}/${bcode}/1`);
     onOpenChange(false);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setSelectedIndex(prev => (prev + 1) % results.length);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setSelectedIndex(prev => (prev - 1 + results.length) % results.length);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (results[selectedIndex]) {
+        handleSelect(results[selectedIndex].bcode);
+      }
+    }
   };
 
   return (
@@ -63,14 +93,15 @@ export function Search({ open, onOpenChange }: Props) {
           placeholder="e.g., Genesis, John, ..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={handleKeyDown}
           className="input input-bordered w-full"
         />
-        <div className="mt-4 max-h-60 overflow-y-auto">
-          {results.map(bible => (
+        <div ref={resultsContainerRef} className="mt-4 max-h-60 overflow-y-auto">
+          {results.map((bible, index) => (
             <div
               key={bible.bcode}
               onClick={() => handleSelect(bible.bcode)}
-              className="p-2 hover:bg-base-200 cursor-pointer rounded-md"
+              className={`p-2 hover:bg-base-200 cursor-pointer rounded-md ${selectedIndex === index ? 'bg-base-300' : ''}`}
             >
               {bible.name}
             </div>
