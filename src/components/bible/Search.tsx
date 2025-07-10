@@ -108,7 +108,7 @@ export function Search({ open, onOpenChange }: Props) {
           ))}
         </div>
       </div>
-      <form method="dialog" className="modal-backdrop">
+      <form method="dialog" className="modal-backdrop backdrop-blur-xs">
         <button>close</button>
       </form>
     </dialog>
