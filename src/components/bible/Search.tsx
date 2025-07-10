@@ -1,4 +1,5 @@
-import { BIBLE_NAMES } from '../../domain/bible-names';
+import { disassembleHangul } from 'domain/chosung'
+import { BIBLE_NAMES } from 'domain/bible-names';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 
@@ -44,10 +45,14 @@ export function Search({ open, onOpenChange }: Props) {
     };
   }, [onOpenChange]);
 
-  const results = BIBLE_NAMES.filter(bible =>
-    bible.name.toLowerCase().includes(query.toLowerCase()) ||
-    bible.abbreviations.some(abbr => abbr.toLowerCase().includes(query.toLowerCase()))
-  );
+  const results = BIBLE_NAMES.filter(bible => {
+    const disassembledQuery = disassembleHangul(query.toLowerCase());
+    const disassembledName = disassembleHangul(bible.name.toLowerCase());
+    const disassembledAbbrs = bible.abbreviations.map(abbr => disassembleHangul(abbr.toLowerCase()));
+
+    return disassembledName.includes(disassembledQuery) ||
+           disassembledAbbrs.some(abbr => abbr.includes(disassembledQuery));
+  });
 
   useEffect(() => {
     setSelectedIndex(0);
