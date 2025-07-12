@@ -4,3 +4,23 @@
 @plugin "daisyui" {
   themes: bumblebee, halloween;
 }
+
+body {
+  font-family: var(--noto-serif-kr);
+}
+
+.font-noto-serif-kr {
+  font-family: var(--noto-serif-kr);
+}
+
+.font-gowun-batang {
+  font-family: var(--gowun-batang);
+}
+
+.font-orbit {
+  font-family: var(--orbit);
+}
+
+.font-gowun-dodum {
+  font-family: var(--gowun-dodum);
+}
