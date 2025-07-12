@@ -10,11 +10,16 @@ export default function SettingsDialog() {
   
   return (
     <Dialog open={open} onClose={() => setOpen(false)}>
-      <h3 className="font-bold text-lg mb-4">Settings</h3>
-      <div className="space-y-4">
+      <fieldset className="fieldset pb-4">
+        <legend className="fieldset-legend mb-4 font-bold text-lg">Settings</legend>
+
+        <label className="label">Theme</label>
         <ThemeSelector />
+        
+        <label className="label mt-4">본문 글꼴</label>
         <FontSelector />
-      </div>
+        
+      </fieldset>
     </Dialog>
   )
 }

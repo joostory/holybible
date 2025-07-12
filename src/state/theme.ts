@@ -1,4 +1,4 @@
-import { THEME_DARK, FONT_FAMILY_KEY, FontFamily, FONT_FAMILIES } from "domain/theme";
+import { THEME_DARK, FONT_FAMILY_KEY, FontFamily, FONT_FAMILIES } from "domain/theme"
 import { atom } from 'jotai'
 
 export const themeState = atom<string>(THEME_DARK)

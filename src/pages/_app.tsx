@@ -1,37 +1,10 @@
-import "styles/globals.css";
-import "styles/index.css";
-import type { AppProps } from "next/app";
-import Script from "next/script";
-import { Provider } from "jotai";
-import { APP_NAME } from "domain/app";
-import Head from "next/head";
-import {
-  Noto_Serif_KR,
-  Gowun_Batang,
-  Orbit,
-  Gowun_Dodum,
-} from "next/font/google";
-
-const notoSerifKr = Noto_Serif_KR({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--noto-serif-kr",
-});
-const gowunBatang = Gowun_Batang({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--gowun-batang",
-});
-const orbit = Orbit({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--orbit",
-});
-const gowunDodum = Gowun_Dodum({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--gowun-dodum",
-});
+import "styles/globals.css"
+import "styles/index.css"
+import type { AppProps } from "next/app"
+import Script from "next/script"
+import { Provider } from "jotai"
+import { APP_NAME } from "domain/app"
+import Head from "next/head"
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -123,11 +96,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="fb:app_id" content="133777953366478" />
       </Head>
       <Script src="/ga.js" />
-      <main
-        className={`${notoSerifKr.variable} ${gowunBatang.variable} ${orbit.variable} ${gowunDodum.variable}`}
-      >
+      <main>
         <Component {...pageProps} />
       </main>
     </Provider>
-  );
+  )
 }
