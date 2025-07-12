@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
-import Header from "components/layout/Header";
-import { useAtomValue } from "jotai";
-import { themeState } from "state/theme";
-import SettingsDialog from "../bible/SettingsDialog";
+import { ReactNode } from "react"
+import Header from "components/layout/Header"
+import { useAtomValue } from "jotai"
+import { themeState } from "state/theme"
+import SettingsDialog from "../bible/SettingsDialog"
 import { SearchDialog } from "components/bible/SearchDialog"
 
 type LayoutProps = {
@@ -19,5 +19,5 @@ export default function Layout({ children }: LayoutProps) {
       <SearchDialog />
       <SettingsDialog />
     </div>
-  );
+  )
 }

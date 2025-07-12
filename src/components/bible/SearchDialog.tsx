@@ -1,7 +1,7 @@
 import { disassembleHangul } from 'domain/chosung'
-import { BIBLE_NAMES } from 'domain/bible-names';
-import { useRouter } from 'next/router';
-import { useEffect, useRef, useState } from 'react';
+import { BIBLE_NAMES } from 'domain/bible-names'
+import { useRouter } from 'next/router'
+import { useEffect, useRef, useState } from 'react'
 import { useAtom } from 'jotai'
 import { searchDialogOpenState } from 'state/dialog'
 import Dialog from 'components/common/Dialog'

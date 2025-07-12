@@ -1,5 +1,5 @@
-import { useAtom } from "jotai";
-import FontSelector from "./FontSelector";
+import { useAtom } from "jotai"
+import FontSelector from "./FontSelector"
 import { settinsgDialogOpenState } from "state/dialog"
 import ThemeSelector from "components/bible/ThemeSelector"
 import Dialog from "components/common/Dialog"

@@ -1,22 +1,22 @@
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
-import { Bible, Version, Verse } from "domain/bible";
-import Link from "next/link";
-import { Do_Hyeon } from "next/font/google";
-import { useAtomValue } from "jotai";
-import { fontFamilyState } from "state/theme";
-import { fontVariables } from "domain/theme";
+import { ChevronLeftIcon } from "@heroicons/react/24/outline"
+import { Bible, Version, Verse } from "domain/bible"
+import Link from "next/link"
+import { Do_Hyeon } from "next/font/google"
+import { useAtomValue } from "jotai"
+import { fontFamilyState } from "state/theme"
+import { fontVariables } from "domain/theme"
 
 const buttonFont = Do_Hyeon({
   weight: "400",
   subsets: ["latin"],
-});
+})
 
-type VerseListProps = {
-  version: Version;
-  bible: Bible;
-  chapter: number;
-  verses?: Verse[];
-};
+interface VerseListProps {
+  version: Version
+  bible: Bible
+  chapter: number
+  verses?: Verse[]
+}
 
 function BackButton({ version, bible, chapter }: VerseListProps) {
   return (
@@ -48,6 +48,6 @@ export default function VerseList({ version, bible, chapter, verses }: VerseList
         ))}
       </ol>
     </>
-  );
+  )
 }
 

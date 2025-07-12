@@ -3,7 +3,7 @@ import { useAtom } from "jotai"
 import { themeState } from "state/theme"
 
 export default function ThemeSelector() {
-  const [theme, setTheme] = useAtom(themeState);
+  const [theme, setTheme] = useAtom(themeState)
 
   return (
     <div className="form-control w-full">

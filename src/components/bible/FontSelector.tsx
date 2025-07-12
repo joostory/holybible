@@ -1,6 +1,6 @@
-import { useAtom } from 'jotai';
-import { setFontFamilyState } from 'state/theme';
-import { FONT_FAMILIES, FontFamily } from 'domain/theme';
+import { useAtom } from 'jotai'
+import { setFontFamilyState } from 'state/theme'
+import { FONT_FAMILIES, FontFamily } from 'domain/theme'
 
 export default function FontSelector() {
   const [fontFamily, setFontFamily] = useAtom(setFontFamilyState);

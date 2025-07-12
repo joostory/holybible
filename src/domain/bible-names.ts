@@ -71,4 +71,4 @@ export const BIBLE_NAMES: BibleName[] = [
   { bcode: 64, name: '요한3서', abbreviations: ['요삼', '3Jn'] },
   { bcode: 65, name: '유다서', abbreviations: ['유', 'Jud'] },
   { bcode: 66, name: '요한계시록', abbreviations: ['계', 'Rev'] },
-];
+]
