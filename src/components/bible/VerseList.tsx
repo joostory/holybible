@@ -11,7 +11,6 @@ import {
   Gowun_Dodum,
 } from "next/font/google";
 import { useMemo } from "react"
-import { FONT_FAMILIES } from "domain/theme"
 
 const notoSerifKr = Noto_Serif_KR({
   weight: "400",

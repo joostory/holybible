@@ -16,15 +16,15 @@ function SearchButton() {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
-        event.preventDefault();
-        setOpen(true);
+        event.preventDefault()
+        setOpen(true)
       }
-    };
+    }
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [])
+    }
+  }, [setOpen])
 
   return (
     <button onClick={() => setOpen(true)}>
@@ -39,15 +39,15 @@ function SettingsButton() {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "," && (event.metaKey || event.ctrlKey)) {
-        event.preventDefault();
-        setOpen(true);
+        event.preventDefault()
+        setOpen(true)
       }
-    };
+    }
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [])
+    }
+  }, [setOpen])
 
   return (
     <button onClick={() => setOpen(true)}>

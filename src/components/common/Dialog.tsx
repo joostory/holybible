@@ -32,7 +32,7 @@ export default function Dialog({open, onClose, children}: DialogProps) {
     return () => {
       dialogNode.removeEventListener('close', handleClose)
     }
-  }, [])
+  }, [onClose])
   
   return (
     <dialog ref={dialogRef} className={`modal`}>
