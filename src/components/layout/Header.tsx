@@ -1,26 +1,63 @@
-import {
-  MagnifyingGlassIcon,
-  Cog6ToothIcon,
-} from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Gugi } from "next/font/google";
+import { useSetAtom } from "jotai"
+import { searchDialogOpenState, settinsgDialogOpenState } from "state/dialog"
+import { Cog6ToothIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline"
+import { useEffect } from "react"
 
-const appNameFont = Gugi({
+const appFont = Gugi({
   weight: "400",
   subsets: ["latin"],
-});
+})
 
-const appListFont = Gugi({
-  weight: "400",
-  subsets: ["latin"],
-});
+function SearchButton() {
+  const setOpen = useSetAtom(searchDialogOpenState)
 
-interface Props {
-  onSearchClick: () => void;
-  onSettingsClick: () => void;
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
+        event.preventDefault();
+        setOpen(true);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [])
+
+  return (
+    <button onClick={() => setOpen(true)}>
+      <MagnifyingGlassIcon className="w-5 h-5" />
+    </button>
+  )
 }
 
-export default function Header({ onSearchClick, onSettingsClick }: Props) {
+function SettingsButton() {
+  const setOpen = useSetAtom(settinsgDialogOpenState)
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "," && (event.metaKey || event.ctrlKey)) {
+        event.preventDefault();
+        setOpen(true);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [])
+
+  return (
+    <button onClick={() => setOpen(true)}>
+      <Cog6ToothIcon className="w-5 h-5" />
+    </button>
+  )
+}
+
+
+export default function Header() {
   return (
     <div className="navbar bg-base-300 text-base-content justify-between">
       <div className="flex ml-4">
@@ -31,22 +68,18 @@ export default function Header({ onSearchClick, onSettingsClick }: Props) {
         />
         <Link
           href={'/'}
-          className={`normal-case text-xl flex-1 font-bold ${appNameFont.className}`}>
+          className={`normal-case text-xl flex-1 font-bold ${appFont.className}`}>
           HolyBible
         </Link>
       </div>
       <div className="flex-none">
         <ul
-          className={`menu menu-compact menu-horizontal px-1 py-0 ${appListFont.className}`}>
+          className={`menu menu-compact menu-horizontal px-1 py-0 ${appFont.className}`}>
           <li>
-            <button onClick={onSearchClick}>
-              <MagnifyingGlassIcon className="w-5 h-5" />
-            </button>
+            <SearchButton />
           </li>
           <li>
-            <button onClick={onSettingsClick}>
-              <Cog6ToothIcon className="w-5 h-5" />
-            </button>
+            <SettingsButton />
           </li>
           <li>
             <a
@@ -60,5 +93,5 @@ export default function Header({ onSearchClick, onSettingsClick }: Props) {
         </ul>
       </div>
     </div>
-  );
+  )
 }
