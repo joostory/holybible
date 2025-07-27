@@ -10,6 +10,34 @@ import { getOVList } from 'domain/ov'
 import { useEffect, useRef } from 'react';
 import { DateTime } from 'luxon';
 
+import {
+  Do_Hyeon,
+  Noto_Serif_KR,
+  Gowun_Batang,
+  Orbit,
+  Gowun_Dodum,
+} from "next/font/google";
+import { useMemo } from "react"
+import { useAtomValue } from 'jotai'
+import { fontFamilyState } from 'state/theme'
+
+const notoSerifKr = Noto_Serif_KR({
+  weight: "400",
+  subsets: ["latin"],
+})
+const gowunBatang = Gowun_Batang({
+  weight: "400",
+  subsets: ["latin"],
+})
+const orbit = Orbit({
+  weight: "400",
+  subsets: ["latin"],
+})
+const gowunDodum = Gowun_Dodum({
+  weight: "400",
+  subsets: ["latin"],
+})
+
 interface OvData {
   date: string;
   displayDate: string;
@@ -24,12 +52,28 @@ interface OvPageProps {
 
 const OvPage: NextPage<OvPageProps> = ({ data, versions }) => {
   const todayRef = useRef<HTMLLIElement>(null);
+  const fontFamily = useAtomValue(fontFamilyState)
+  
+  const fontClassName = useMemo(() => {
+    switch (fontFamily) {
+      case "Noto_Serif_KR":
+        return notoSerifKr.className;
+      case "Gowun_Batang":
+        return gowunBatang.className;
+      case "Orbit":
+        return orbit.className;
+      case "Gowun_Dodum":
+        return gowunDodum.className;
+      default:
+        return "";
+    }
+  }, [fontFamily])
 
   useEffect(() => {
     setTimeout(() => {
       todayRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 300)
-  }, []);
+  }, [])
 
   const today = DateTime.now();
   const year = today.year;
@@ -43,14 +87,14 @@ const OvPage: NextPage<OvPageProps> = ({ data, versions }) => {
       </Head>
       <Layout>
         <Content>
-          <div className="py-4 max-[768px]:w-screen">
-            <h1 className="text-2xl font-bold mb-4 mx-2">오늘의 묵상</h1>
-            <ul className="flex flex-wrap gap-2">
+          <div className={`py-4 max-[768px]:w-screen max-[768px]:px-2 ${fontClassName}`}>
+            <h1 className="text-2xl font-bold mb-4 mx-3">오늘의 묵상</h1>
+            <ul className="flex flex-col gap-2">
               {data.map((item, index) => {
                 const isToday = item.date === todayString;
                 return (
                   <li key={index} ref={isToday ? todayRef : null}>
-                    <Link href={item.url || ""} className={`rounded-lg p-2 hover:bg-base-content/5 flex flex-row gap-2 justify-center ${isToday ? 'bg-base-content/10' : ''}`}>
+                    <Link href={item.url || ""} className={`rounded-lg p-2 hover:bg-base-content/5 flex flex-row gap-2 justify-start items-center ${isToday ? 'bg-base-content/10' : ''}`}>
                       <div className={`badge ${isToday? 'badge-accent': 'badge-ghost'} text-xs`}>{item.displayDate}</div>
                       <span>{item.verse}</span>
                     </Link>
