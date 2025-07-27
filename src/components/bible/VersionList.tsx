@@ -14,6 +14,9 @@ export default function VersionList({versions}: VersionListProps) {
           <Link href={`/${v.vcode}`}>{v.name}</Link>
         </ListItem>
       )}
+      <ListItem>
+        <Link href={`/page/ov`}>오늘의 묵상</Link>
+      </ListItem>
     </List>
   )
 }
