@@ -1,4 +1,3 @@
-
 import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import { Bible, getBibles, getVersions, Version } from 'domain/bible'
@@ -8,6 +7,8 @@ import Content from 'components/layout/Content'
 import Sidebar from 'components/layout/Sidebar'
 import VersionList from 'components/bible/VersionList'
 import { getOVList } from 'domain/ov'
+import { useEffect, useRef } from 'react';
+import { DateTime } from 'luxon';
 
 interface OvData {
   date: string;
@@ -21,6 +22,16 @@ interface OvPageProps {
 }
 
 const OvPage: NextPage<OvPageProps> = ({ data, versions }) => {
+  const todayRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      todayRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 300)
+  }, []);
+
+  const todayString = DateTime.now().toFormat('yyyy/MM/dd');
+
   return (
     <>
       <Head>
@@ -31,14 +42,17 @@ const OvPage: NextPage<OvPageProps> = ({ data, versions }) => {
           <div className="py-4 max-[768px]:w-screen">
             <h1 className="text-2xl font-bold mb-4 mx-2">오늘의 묵상</h1>
             <ul className="flex flex-wrap gap-2">
-              {data.map((item, index) => (
-                <li key={index}>
-                  <Link href={item.url || ""} className="rounded-lg p-2 hover:bg-base-content/5 flex flex-row gap-2 justify-center">
-                    <div className="badge badge-ghost text-xs">{item.date}</div>
-                    <span>{item.verse}</span>
-                  </Link>
-                </li>
-              ))}
+              {data.map((item, index) => {
+                const isToday = item.date === todayString;
+                return (
+                  <li key={index} ref={isToday ? todayRef : null}>
+                    <Link href={item.url || ""} className={`rounded-lg p-2 hover:bg-base-content/5 flex flex-row gap-2 justify-center`}>
+                      <div className={`badge ${isToday? 'badge-accent': 'badge-ghost'} text-xs`}>{item.date}</div>
+                      <span>{item.verse}</span>
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </Content>

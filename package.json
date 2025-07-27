@@ -29,6 +29,7 @@
   "homepage": "https://github.com/joostory/holybible#readme",
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
+    "@types/luxon": "^3.6.2",
     "@types/node": "^22.8.1",
     "@types/papaparse": "^5.3.16",
     "@types/react": "^19.0.7",
@@ -48,6 +49,7 @@
     "classnames": "^2.2.6",
     "daisyui": "^5.0.43",
     "jotai": "^2.11.0",
+    "luxon": "^3.7.1",
     "next": "^15.0.1",
     "papaparse": "^5.5.3",
     "react": "^19.0.0",
