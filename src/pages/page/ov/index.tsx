@@ -12,6 +12,7 @@ import { DateTime } from 'luxon';
 
 interface OvData {
   date: string;
+  displayDate: string;
   verse: string;
   url?: string;
 }
@@ -30,7 +31,10 @@ const OvPage: NextPage<OvPageProps> = ({ data, versions }) => {
     }, 300)
   }, []);
 
-  const todayString = DateTime.now().toFormat('yyyy/MM/dd');
+  const today = DateTime.now();
+  const year = today.year;
+  const baseYear = 2023 + (year - 2023) % 3;
+  const todayString = DateTime.fromObject({ year: baseYear, month: today.month, day: today.day }).toFormat('yyyy/MM/dd');
 
   return (
     <>
@@ -46,8 +50,8 @@ const OvPage: NextPage<OvPageProps> = ({ data, versions }) => {
                 const isToday = item.date === todayString;
                 return (
                   <li key={index} ref={isToday ? todayRef : null}>
-                    <Link href={item.url || ""} className={`rounded-lg p-2 hover:bg-base-content/5 flex flex-row gap-2 justify-center`}>
-                      <div className={`badge ${isToday? 'badge-accent': 'badge-ghost'} text-xs`}>{item.date}</div>
+                    <Link href={item.url || ""} className={`rounded-lg p-2 hover:bg-base-content/5 flex flex-row gap-2 justify-center ${isToday ? 'bg-base-content/10' : ''}`}>
+                      <div className={`badge ${isToday? 'badge-accent': 'badge-ghost'} text-xs`}>{item.displayDate}</div>
                       <span>{item.verse}</span>
                     </Link>
                   </li>
@@ -90,9 +94,14 @@ export const getStaticProps: GetStaticProps = async () => {
 
 
   const data = getOVList().map((row) => {
+    const date = DateTime.fromFormat(row.date, 'yyyy/MM/dd');
+    const year = date.year;
+    const displayYear = year - 2022;
+    const displayDate = `${displayYear}년차 ${date.toFormat('MM/dd')}`;
     
     return {
       date: row.date,
+      displayDate,
       verse: row.content,
       url: makeBibleUrl(row.content)
     }
