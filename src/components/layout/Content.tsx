@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { ArrowsPointingOutIcon } from '@heroicons/react/24/outline'
 
 type ContentProps = {
@@ -9,27 +9,37 @@ export default function Content({ children }: ContentProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [fullscreen, setFullscreen] = useState(false)
 
-  function handleFullscreen() {
-    if (ref.current) {
-      ref.current.requestFullscreen()
+  const handleFullscreen = useCallback(() => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen()
+    } else {
+      ref.current?.requestFullscreen()
     }
-  }
+  }, [])
+
+  useEffect(() => {
+    const handleKeydown = (e: KeyboardEvent) => {
+      if (e.key === 'f') {
+        handleFullscreen()
+      }
+    }
+    window.addEventListener('keydown', handleKeydown)
+    return () => {
+      window.removeEventListener('keydown', handleKeydown)
+    }
+  }, [handleFullscreen])
 
   useEffect(() => {
     const listener = () => {
       setFullscreen(!!document.fullscreenElement)
     }
 
-    if (ref.current) {
-      ref.current.addEventListener('fullscreenchange', listener)
-    }
+    document.addEventListener('fullscreenchange', listener)
 
     return () => {
-      if (ref.current) {
-        ref.current.removeEventListener('fullscreenchange', listener)
-      }
+      document.removeEventListener('fullscreenchange', listener)
     }
-  }, [ref])
+  }, [])
 
 
   return (
