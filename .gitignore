@@ -5,6 +5,7 @@ Gemfile.lock
 node_modules
 
 .next
+next-env.d.ts
 out
 dist/index.html
 dist/js

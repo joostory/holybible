@@ -10,7 +10,8 @@
     "clean": "rm -rf .next out",
     "preexport": "npm run build",
     "export": "next export",
-    "lint": "eslint .",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "test": "jest"
   },
   "repository": {
